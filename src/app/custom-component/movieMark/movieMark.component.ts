@@ -17,7 +17,7 @@ export class MovieMarkComponent implements OnInit {
     }
 
     getMovieMarkById() {
-        this.movieMarkService.getById(3, (success) => {
+        this.movieMarkService.getById(2, (success) => {
             this.movieMark = <MovieMark>success;
         });
     }
@@ -40,7 +40,7 @@ export class MovieMarkComponent implements OnInit {
         });
     }
     deleteMovieMark() {
-        this.movieMarkService.delete(3, (success) => {
+        this.movieMarkService.delete(4, (success) => {
             this.movieMark = <MovieMark>success;
         });
     }
