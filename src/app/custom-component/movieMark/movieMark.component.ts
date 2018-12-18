@@ -9,6 +9,7 @@ import { MovieMarkService } from './movieMark.service';
 })
 export class MovieMarkComponent implements OnInit {
     public movieMark: MovieMark;
+    public movieMarks: MovieMark[] = [];
     constructor(private movieMarkService: MovieMarkService) {
         this.movieMark = new MovieMark();
     }
@@ -24,7 +25,7 @@ export class MovieMarkComponent implements OnInit {
 
     showAllMovieMarks() {
         this.movieMarkService.getAll((success) => {
-            this.movieMark = <MovieMark>success;
+            this.movieMarks = <MovieMark[]>success;
         });
     }
 
