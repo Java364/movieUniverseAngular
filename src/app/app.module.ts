@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CustomComponentModule} from './custom-component/customComponents.module';
 import { AppComponent } from './app.component';
-import { PosterComponent } from './custom-components/poster/poster.component';
+
+import { LinksComponent } from './custom-component/links/links.component';
 import { FormsModule } from '@angular/forms';
+
+import { PosterComponent } from './custom-component/poster/poster.component';
+
 import { CustomComponentModule } from './custom-components/customComponents.module';
+
 
 @NgModule({
   declarations: [
     AppComponent
-  ],
+    ],
   imports: [
-    CustomComponentModule,
+
     FormsModule,
     BrowserModule,
-    
+    CustomComponentModule
 
   ],
   providers: [],
