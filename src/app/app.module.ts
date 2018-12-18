@@ -8,7 +8,9 @@ import { FormsModule } from '@angular/forms';
 
 import { PosterComponent } from './custom-component/poster/poster.component';
 
+
 import { CustomComponentModule } from './custom-component/customComponents.module';
+
 
 
 @NgModule({
