@@ -6,16 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import {LinksComponent} from './links/links.component';
 import {LinksService} from './links/links.service';
 
+import {PosterComponent} from './poster/poster.component';
+import {PosterService} from './poster/poster.service';
+
 @NgModule({
-    declarations: [LinksComponent],
+    declarations: [LinksComponent, PosterComponent],
     imports: [
         HttpClientModule,
         CommonModule,
         FormsModule
     ],
-    exports: [LinksComponent],
+    exports: [LinksComponent, PosterComponent],
     providers: [
-        LinksService
+        LinksService,
+      PosterService
     ],
 })
 export class CustomComponentModule {}
