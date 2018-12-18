@@ -1,0 +1,42 @@
+<div class="container">
+<div>
+  <button type="button" class="btn btn-primary"(click)="linkGet()">Get Link</button>
+  <!--<button type="button" class="btn btn-success"(click)="createPost()">Create</button>-->
+  <button type="button" class="btn btn-secondary"(click)="updatePut()">Update</button>
+  <button type="button" class="btn btn-info"(click)="testAll()">All</button>
+  <button type="button" class="btn btn-danger"(click)="linkDelete()">Delete</button>
+
+  <div>
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="links.linkName"/>
+  </div>
+  <div>
+    <label>Social Networking Site:</label>
+    <select  class="form-control form-control-lg " [(ngModel)]="links.socialNetworkingSite" >
+      <option  value="FACEBOOK" >FACEBOOK</option>
+      <option   value="INSTAGRAM">INSTAGRAM</option>
+      <option   value="TWITTER">TWITTER</option>
+    </select>
+  </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
+
+
+   <!-- <div>
+     <div>
+      <input type="radio" [(ngModel)]="links.socialNetworkingSite"  value="FACEBOOK" ><span>FACEBOOK</span>
+     </div>
+      <div>
+      <input type="radio" [(ngModel)]="links.socialNetworkingSite"  value="INSTAGRAM" ><span>INSTAGRAM</span>
+      </div>
+     <div>
+      <input type="radio" [(ngModel)]="links.socialNetworkingSite"  value="TWITTER" ><span>TWITTER</span>
+      </div>
+    </div>-->
+    <!--<input type="text" [(ngModel)]="links.starId"/>-->
+
+ <!-- <div>
+    <label>StarID:</label>
+    <input type="text" [(ngModel)]="links.starId"/>
+  </div>-->
+
+</div>
+</div>
