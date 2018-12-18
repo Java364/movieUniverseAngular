@@ -2,12 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CustomComponentModule } from './custom-component/customComponents.module';
+import { FormsModule } from '@angular/forms';
+import { CountryComponent } from './custom-component/country/country.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    FormsModule,
+    CustomComponentModule,
     BrowserModule
   ],
   providers: [],
