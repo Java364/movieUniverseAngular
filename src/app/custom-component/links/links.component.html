@@ -1,23 +1,33 @@
 <div class="container">
 <div>
-  <button type="button" class="btn btn-primary"(click)="linkGet()">Get Link</button>
+  <button type="button" style="margin: 5px" class="btn btn-primary"(click)="linkGet()">Get Link</button>
   <!--<button type="button" class="btn btn-success"(click)="createPost()">Create</button>-->
-  <button type="button" class="btn btn-secondary"(click)="updatePut()">Update</button>
-  <button type="button" class="btn btn-info"(click)="testAll()">All</button>
-  <button type="button" class="btn btn-danger"(click)="linkDelete()">Delete</button>
+  <button type="button" style="margin: 5px" class="btn btn-primary"(click)="updatePut()">Update</button>
+  <button type="button" style="margint: 5px" class="btn btn-primary"(click)="testAll()">All</button>
+  <button type="button" style="margin: 5px" class="btn btn-primary"(click)="linkDelete()">Delete</button>
 
-  <div>
-    <label>Name:</label>
-    <input type="text" [(ngModel)]="links.linkName"/>
-  </div>
-  <div>
-    <label>Social Networking Site:</label>
-    <select  class="form-control form-control-lg " [(ngModel)]="links.socialNetworkingSite" >
-      <option  value="FACEBOOK" >FACEBOOK</option>
-      <option   value="INSTAGRAM">INSTAGRAM</option>
-      <option   value="TWITTER">TWITTER</option>
-    </select>
-  </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
+    <form>
+      <div class="form-group col-md-7">
+        <label for="link">Name:</label>
+        <input type="text" [(ngModel)]="links.linkName" id="link" class="form-control"  name="linkName"/>
+      </div>
+      <div class="form-group col-md-7">
+        <label for="star">Star:</label>
+        <input type="text" [(ngModel)]="links.starID" id="star" class="form-control" name="starID"/>
+      </div>
+
+      <div>
+        <label>Social Networking Site:</label>
+        <select  class="form-control form-control-lg " [(ngModel)]="links.socialNetworkingSite" name="socialNetworkingSite">
+          <option  value="FACEBOOK" >FACEBOOK</option>
+          <option   value="INSTAGRAM">INSTAGRAM</option>
+          <option   value="TWITTER">TWITTER</option>
+        </select>
+      </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
+    </form>
+
+
+
 
 
    <!-- <div>

@@ -17,12 +17,12 @@ export class LinksComponent implements OnInit {
   }
 
   linkGet() {
-  this.linksService.getLinks(7, (success) => {
+  this.linksService.getLinks(6, (success) => {
     this.links = <Links>success;
   });
 }
   linkDelete() {
-    this.linksService.deleteLinks(24, (success) => {
+    this.linksService.deleteLinks(25, (success) => {
       this.links = <Links>success;
     });
   }
@@ -33,7 +33,7 @@ export class LinksComponent implements OnInit {
   }
 
   updatePut() {
-    this.linksService.updateLinks(7, this.links, (success) => {
+    this.linksService.updateLinks(6, this.links, (success) => {
       this.links = <Links>success;
     });
 

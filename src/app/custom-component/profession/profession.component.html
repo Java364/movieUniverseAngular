@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <button type="button"style="margin: 5px" class="btn btn-primary" (click)="professionGet()">Get Profession</button>
+    <!--<button type="button" class="btn btn-success"(click)="createPost()">Create</button>-->
+    <button type="button" style="margin: 5px" class="btn btn-primary "(click)="professionPut()">Update</button>
+    <button type="button" style="margin: 5px" class="btn btn-primary" (click)="testAll()">All</button>
+    <button type="button" style="margin: 5px" class="btn btn-primary" (click)="professionDelete()">Delete</button>
+
+    <div>
+      <label>type:</label>
+      <input type="text" [(ngModel)]="profession.professionType"/>
+
+    </div>
+    <div>
+
+    </div><button type="button" class="btn btn-success"(click)="professionPost()">Create</button>
+
+
+  </div>
+</div>
