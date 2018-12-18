@@ -48,7 +48,7 @@ export class LinksService {
   }
 
 
-  /*public showAll( callback: Function) {
+ /* public showAll( callback: Function) {
     this.httpClient.put('http://localhost:8080/links/listAll' , links).subscribe(
       (success) => {
         callback(success);

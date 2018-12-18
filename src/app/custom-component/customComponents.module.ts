@@ -14,21 +14,25 @@ import { PosterService } from './poster/poster.service';
 import { MovieMarkComponent } from './movieMark/movieMark.component';
 import { MovieMarkService } from './movieMark/movieMark.service';
 
+import {ProfessionService} from './profession/profession.service';
+import {ProfessionComponent} from './profession/profession.component';
+
 
 
 @NgModule({
-    declarations: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent],
+    declarations: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent],
     imports: [
         HttpClientModule,
         CommonModule,
         FormsModule
     ],
-    exports: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent],
+    exports: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent],
     providers: [
         LinksService,
         PosterService,
         CountryService,
-        MovieMarkService
+        MovieMarkService,
+        ProfessionService
     ],
 })
 export class CustomComponentModule { }
