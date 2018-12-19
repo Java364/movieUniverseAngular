@@ -8,6 +8,7 @@ import {PageComponent} from './page.component';
 import {CustomComponentModule} from '../custom-component/customComponents.module';
 import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
+import { GenrePageComponent } from './genre/genre-page.component';
 
 
 const appRoutes: Routes = [
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   {path: 'profession', component: ProfessionPageComponent},
   {path: 'country', component: CountryPageComponent},
   {path: 'links', component: LinksPageComponent},
-  {path: 'poster', component: PosterPageComponent}
+  {path: 'poster', component: PosterPageComponent},
+  {path: 'genre', component: GenrePageComponent}
 
 ];
 
@@ -38,8 +40,8 @@ const appRoutes: Routes = [
     ProfessionPageComponent,
     CountryPageComponent,
     LinksPageComponent,
-    PosterPageComponent
-
+    PosterPageComponent,
+    GenrePageComponent
   ],
   providers: [],
 })
