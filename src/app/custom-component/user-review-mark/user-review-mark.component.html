@@ -1,3 +1,18 @@
-<p>
-  user-review-mark works!
-</p>
+<div class="container">
+  <button (click)="testGet()">Test Get</button>
+  <button (click)="testPost()">Test Post</button>
+  <button (click)="testPut()">Test Put</button>
+  <button (click)="testDelete()">Test Delete</button>
+  <div>
+      <label>Mark:</label>
+      <input type="text" [(ngModel)]="userReviewMark.mark"/>
+  </div>
+  <div>
+      <label>Reviwer ID:</label>
+      <input type="text" [(ngModel)]="userReviewMark.reviewerId"/>
+  </div>
+  <div>
+      <label>UserReview ID:</label>
+      <input type="text" [(ngModel)]="userReviewMark.userReviewId"/>
+  </div>
+</div>

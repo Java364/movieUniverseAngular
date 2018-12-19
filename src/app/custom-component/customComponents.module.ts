@@ -19,6 +19,8 @@ import { ProfessionComponent } from './profession/profession.component';
 import { CountrySelectorComponent } from './country/country-selector/country-selector.component';
 import { StarComponent } from './star/star.component';
 import { StarService } from './star/star.service';
+import { UserReviewMarkComponent } from './user-review-mark/user-review-mark.component';
+import { UserReviewMarkService } from './user-review-mark/userReviewMark.service';
 
 @NgModule({
     declarations: [
@@ -28,6 +30,7 @@ import { StarService } from './star/star.service';
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
+        UserReviewMarkComponent,
         CountrySelectorComponent
     ],
     imports: [
@@ -42,12 +45,14 @@ import { StarService } from './star/star.service';
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
+        UserReviewMarkComponent,
         CountrySelectorComponent
     ],
     providers: [
         LinksService,
         PosterService,
         CountryService,
+        UserReviewMarkService,
         MovieMarkService,
         ProfessionService,
         StarService
