@@ -1,9 +1,9 @@
 <div class="container">
   PROFESSION
   <div>
-    <button type="button"style="margin: 5px" class="btn btn-primary" (click)="professionGet()">Find</button>
-    <button type="button" style="margint: 5px" class="btn btn-primary"(click)="testAll()">Show All</button>
-    <button type="button" style="margin: 5px" class="btn btn-primary" (click)="professionDelete()">Delete</button>
+    <button type="button"style="margin: 5px" class="btn btn-outline-primary" (click)="professionGet()">Find</button>
+    <button type="button" style="margint: 5px" class="btn btn-outline-primary"(click)="testAll()">Show All</button>
+    <button type="button" style="margin: 5px" class="btn btn-outline-danger" (click)="professionDelete()">Delete</button>
 
     <div>
       <label>Profession Type:</label>
@@ -12,13 +12,16 @@
       <!--<div><span>star</span>
         <p *ngFor="let starIds of profession">{{ profession.starIds }}</p>
       </div>-->
+      <li *ngFor="let profession of profession.starIds">
+        {{ profession }}
+      </li> <br>
      <!-- <ul>
-        <li *ngfor="let starIds of starIds">{{ starIds }}</li>
+        <li *ngfor="let starIds of profession">{{ starIds.starIds }}</li>
       </ul>-->
 
     </div>
-    <button type="button" style="margin: 5px" class="btn btn-success"(click)="professionPost()">Create</button>
-    <button type="button" style="margin: 5px" class="btn btn-primary "(click)="professionPut()">Update</button>
+    <button type="button" style="margin: 5px" class="btn btn-outline-success"(click)="professionPost()">Create</button>
+    <button type="button" style="margin: 5px" class="btn btn-outline-primary "(click)="professionPut()">Update</button>
     <ul>
       <li *ngFor="let list of professionList">
         <div> Name: {{list.professionType}}</div>
