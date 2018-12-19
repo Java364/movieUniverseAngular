@@ -1,0 +1,18 @@
+<div class="container">
+  <button (click)="testGet()">Test Get</button>
+  <button (click)="testPost()">Test Post</button>
+  <button (click)="testPut()">Test Put</button>
+  <button (click)="testDelete()">Test Delete</button>
+  <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="poster.name"/>
+  </div>
+  <div>
+      <label>URL:</label>
+      <input type="text" [(ngModel)]="poster.imageUrl"/>
+  </div>
+  <div>
+      <label>MovieID:</label>
+      <input type="text" [(ngModel)]="poster.movieId"/>
+  </div>
+</div>

@@ -4,7 +4,6 @@ import {Star} from './star';
 
 @Injectable()
 export class StarService {
-  starProfileUrl = 'star/{id}';
   constructor(private httpClient: HttpClient) {
   }
   public getStar(id: number, callback: Function) {

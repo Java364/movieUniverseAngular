@@ -20,8 +20,6 @@ export class StarComponent implements OnInit {
       this.star = <Star>success;
     });
   }
-
-
   testPost() {
     this.starService.createStar(this.star, (success) => {
       this.star = <Star>success;

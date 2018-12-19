@@ -2,27 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StarComponent } from './custom-component/star/star.component';
-import {HttpClientModule} from '@angular/common/http';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {StarService} from './custom-component/star/star.service';
+import { FormsModule } from '@angular/forms';
+import { CustomComponentModule } from './custom-component/customComponents.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    CommonModule,
-    FormsModule
+    FormsModule,
+    CustomComponentModule
   ],
-  exports: [StarComponent],
-  providers: [StarService],
+  providers: [],
   bootstrap: [AppComponent]
-})
-export class AppModule { }
+  })
+  export class AppModule { }
+
+
 
 

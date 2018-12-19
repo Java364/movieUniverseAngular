@@ -1,0 +1,34 @@
+<div class="container">
+  LINKS
+<div>
+  <button type="button" style="margin: 5px" class="btn btn-primary"(click)="linkGet()">Find</button>
+  <button type="button" style="margint: 5px" class="btn btn-primary"(click)="testAll()">Show All</button>
+  <button type="button" style="margin: 5px" class="btn btn-primary"(click)="linkDelete()">Delete</button>
+
+    <form>
+      <div class="form-group col-md-7">
+        <label for="link">Name:</label>
+        <input type="text" [(ngModel)]="links.linkName" id="link" class="form-control"  name="linkName"/>
+      </div>
+      <div class="form-group col-md-7">
+        <label for="star">Star:</label>
+        <input type="text" [(ngModel)]="links.starID" id="star" class="form-control" name="starID"/>
+      </div>
+
+      <div>
+        <label>Social Networking Site:</label>
+        <select  class="form-control form-control-lg " [(ngModel)]="links.socialNetworkingSite" name="socialNetworkingSite">
+          <option  value="FACEBOOK" >FACEBOOK</option>
+          <option   value="INSTAGRAM">INSTAGRAM</option>
+          <option   value="TWITTER">TWITTER</option>
+        </select>
+      </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
+      <button type="button" style="margin: 5px" class="btn btn-primary"(click)="updatePut()">Update</button>
+    </form>
+  <ul>
+    <li *ngFor="let ll of linksList">
+       {{ll.linkName}}
+    </li>
+  </ul>
+</div>
+</div>
