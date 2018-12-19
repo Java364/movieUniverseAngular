@@ -1,0 +1,14 @@
+export class User {
+    userId: number;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    firstName: string;
+    lastName: string;
+    birthday: number;
+    isRemoved: boolean;
+    
+    constructor() {
+
+    }
+}
