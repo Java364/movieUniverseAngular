@@ -15,15 +15,16 @@ export class ProfessionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.testAll();
   }
 
-  professionGet() {
-    this.professionService.getProfession(2, (success) => {
+  professionGet(id: number) {
+    this.professionService.getProfession(id, (success) => {
       this.profession = <Profession>success;
     });
   }
-  professionDelete() {
-    this.professionService.deleteProfession(17, (success) => {
+  professionDelete(id: number) {
+    this.professionService.deleteProfession(id, (success) => {
       this.profession = <Profession>success;
     });
   }
@@ -33,8 +34,8 @@ export class ProfessionComponent implements OnInit {
     });
   }
 
-  professionPut() {
-    this.professionService.updateProfession(2, this.profession, (success) => {
+  professionPut(id: number) {
+    this.professionService.updateProfession(id, this.profession, (success) => {
       this.profession = <Profession>success;
     });
 
