@@ -9,6 +9,7 @@ import {Links} from './links';
 })
 export class LinksComponent implements OnInit {
   public links: Links;
+  public linksList: Links[] = [];
   constructor(private linksService: LinksService) {
     this.links = new Links();
   }
@@ -38,9 +39,9 @@ export class LinksComponent implements OnInit {
     });
 
   }
-/*  testAll() {
+  testAll() {
     this.linksService.showAll( (success) => {
-      this.links = <Links>success;
+      this.linksList = <Links[]>success;
     });
-  }*/
+  }
 }
