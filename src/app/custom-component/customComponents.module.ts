@@ -22,6 +22,8 @@ import { ProfessionComponent } from './profession/profession.component';
 import { CountrySelectorComponent } from './country/country-selector/country-selector.component';
 import { StarComponent } from './star/star.component';
 import { StarService } from './star/star.service';
+import { GenreComponent } from './genre/genre.component';
+import {GenreService} from './genre/genre.service';
 
 @NgModule({
     declarations: [
@@ -32,6 +34,7 @@ import { StarService } from './star/star.service';
         ProfessionComponent,
         StarComponent,
         CountrySelectorComponent,
+        GenreComponent,
         UserComponent
     ],
     imports: [
@@ -46,17 +49,19 @@ import { StarService } from './star/star.service';
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
+        GenreComponent,
         CountrySelectorComponent,
         UserComponent
     ],
-    providers: [
-        LinksService,
-        PosterService,
-        CountryService,
-        MovieMarkService,
-        ProfessionService,
-        StarService,
-        UserService
-    ],
+  providers: [
+    LinksService,
+    PosterService,
+    CountryService,
+    MovieMarkService,
+    ProfessionService,
+    StarService,
+    GenreService,
+    UserService
+  ],
 })
 export class CustomComponentModule { }
