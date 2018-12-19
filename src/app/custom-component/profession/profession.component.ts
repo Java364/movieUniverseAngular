@@ -9,6 +9,7 @@ import {ProfessionService} from './profession.service';
 })
 export class ProfessionComponent implements OnInit {
   public profession: Profession;
+  public professionList: Profession[] = [];
   constructor(private professionService: ProfessionService) {
     this.profession = new Profession();
   }
@@ -37,6 +38,11 @@ export class ProfessionComponent implements OnInit {
       this.profession = <Profession>success;
     });
 
+  }
+  testAll() {
+    this.professionService.showAll( (success) => {
+      this.professionList = <Profession[]>success;
+    });
   }
 
 }
