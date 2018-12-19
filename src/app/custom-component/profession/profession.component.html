@@ -8,7 +8,13 @@
     <div>
       <label>Profession Type:</label>
       <input type="text" [(ngModel)]="profession.professionType"/>
-      <input type="text" [(ngModel)]="profession.starIds"/>
+      <!--<input type="text" [(ngModel)]="profession.starIds"/>-->
+      <!--<div><span>star</span>
+        <p *ngFor="let starIds of profession">{{ profession.starIds }}</p>
+      </div>-->
+     <!-- <ul>
+        <li *ngfor="let starIds of starIds">{{ starIds }}</li>
+      </ul>-->
 
     </div>
     <button type="button" style="margin: 5px" class="btn btn-success"(click)="professionPost()">Create</button>

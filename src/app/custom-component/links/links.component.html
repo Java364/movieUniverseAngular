@@ -25,6 +25,10 @@
       </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
       <button type="button" style="margin: 5px" class="btn btn-primary"(click)="updatePut()">Update</button>
     </form>
-
+  <ul>
+    <li *ngFor="let ll of linksList">
+       {{ll.linkName}}
+    </li>
+  </ul>
 </div>
 </div>
