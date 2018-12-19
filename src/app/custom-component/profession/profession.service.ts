@@ -40,6 +40,13 @@ export class ProfessionService {
       }
     );
   }
+  public showAll( callback: Function) {
+    this.httpClient.get('http://localhost:8080/profession/listAll').subscribe(
+      (success) => {
+        callback(success);
+      }
+    );
+  }
 
   public updateProfession(id: number, profession: Profession, callback: Function) {
     this.httpClient.put('http://localhost:8080/profession/profession/' + id , profession).subscribe(

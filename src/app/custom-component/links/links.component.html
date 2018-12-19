@@ -25,6 +25,12 @@
       </div><button type="button" class="btn btn-success"(click)="createPost()">Create</button>
       <button type="button" style="margin: 5px" class="btn btn-primary"(click)="updatePut()">Update</button>
     </form>
-
+  <ul>
+    <li *ngFor="let list of linksList">
+     <div> Name: {{list.linkName}}</div>
+     <div>Social Networking Site: {{list.socialNetworkingSite}}</div>
+     <div> starID: {{list.starID}}</div>
+    </li>
+  </ul>
 </div>
 </div>

@@ -2,17 +2,30 @@
   PROFESSION
   <div>
     <button type="button"style="margin: 5px" class="btn btn-primary" (click)="professionGet()">Find</button>
-    <button type="button" style="margin: 5px" class="btn btn-primary" (click)="testAll()">Show All</button>
+    <button type="button" style="margint: 5px" class="btn btn-primary"(click)="testAll()">Show All</button>
     <button type="button" style="margin: 5px" class="btn btn-primary" (click)="professionDelete()">Delete</button>
 
     <div>
       <label>Profession Type:</label>
       <input type="text" [(ngModel)]="profession.professionType"/>
-      <input type="text" [(ngModel)]="profession.starIds"/>
+      <!--<input type="text" [(ngModel)]="profession.starIds"/>-->
+      <!--<div><span>star</span>
+        <p *ngFor="let starIds of profession">{{ profession.starIds }}</p>
+      </div>-->
+     <!-- <ul>
+        <li *ngfor="let starIds of starIds">{{ starIds }}</li>
+      </ul>-->
 
     </div>
     <button type="button" style="margin: 5px" class="btn btn-success"(click)="professionPost()">Create</button>
     <button type="button" style="margin: 5px" class="btn btn-primary "(click)="professionPut()">Update</button>
-
+    <ul>
+      <li *ngFor="let list of professionList">
+        <div> Name: {{list.professionType}}</div>
+        <div> starIds: {{list.starIds}}</div>
+        <!--<div>Social Networking Site: {{list.socialNetworkingSite}}</div>
+        <div> starID: {{list.starID}}</div>-->
+      </li>
+    </ul>
   </div>
 </div>

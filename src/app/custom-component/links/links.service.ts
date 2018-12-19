@@ -48,11 +48,11 @@ export class LinksService {
   }
 
 
- /* public showAll( callback: Function) {
-    this.httpClient.put('http://localhost:8080/links/listAll' , links).subscribe(
+  public showAll( callback: Function) {
+    this.httpClient.get('http://localhost:8080/links/listAll').subscribe(
       (success) => {
         callback(success);
       }
     );
-  }*/
+  }
 }

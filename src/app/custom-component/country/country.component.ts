@@ -9,40 +9,59 @@ import { CountryService } from './country.service';
 })
 export class CountryComponent implements OnInit {
     public country: Country;
+    public countries: Country[] = [];
     constructor(private countryService: CountryService) {
         this.country = new Country();
     }
 
     ngOnInit(): void {
+        this.showAllCountries();
     }
 
-    getCountryById() {
-        this.countryService.getById(3, (success) => {
+    getCountry = (id: number) => {
+        this.countryService.getById(id, (success) => {
             this.country = <Country>success;
         });
     }
 
-    showAllCountries() {
+    showAllCountries = () => {
         this.countryService.getAll((success) => {
-            this.country = <Country>success;
+            this.countries = <Country[]>success;
         });
     }
 
-    createCountry() {
+    createCountry = () => {
         this.countryService.create(this.country, (success) => {
             this.country = <Country>success;
+            this.showAllCountries();
         });
     }
 
-    updateCountry() {
-        this.countryService.update(3, this.country, (success) => {
+    updateCountry = (id: number) => {
+        this.countryService.update(id, this.country, (success) => {
             this.country = <Country>success;
-        });
-    }
-    deleteCountry() {
-        this.countryService.delete(3, (success) => {
-            this.country = <Country>success;
+            this.showAllCountries();
         });
     }
 
+    deleteCountry = (id: number) => {
+        if (!confirm('This country will be removed')) {
+            return;
+        }
+        this.countryService.delete(id, (success) => {
+            this.showAllCountries();
+        });
+    }
+
+    saveCountry = () => {
+        if (this.country.id > -1) {
+            this.updateCountry(this.country.id);
+        } else {
+            this.createCountry();
+        }
+    }
+
+    createNew = () => {
+        this.country = new Country();
+    }
 }

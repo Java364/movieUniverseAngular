@@ -1,0 +1,41 @@
+<div>
+  <button (click)="testGet()">Test Get</button>
+  <button (click)="testPost()">Test Post</button>
+  <button (click)="testPut()">Test Put</button>
+  <button (click)="testDelete()">Test Delete</button>
+</div>
+<div>cool girl</div>
+
+<div>
+  <label>First Name </label> <label> {{star.firstName}} </label> <br>
+  <label>Last Name </label>  <label> {{star.lastName}} </label> <br>
+  <label>ID </label> <label> {{star.id}} </label> <br>
+  <label>Bio </label><label> {{star.biography}} </label> <br>
+  <label>Gallery Id </label><label>{{star.galleryId}}</label> <br>
+  <label>Birthday </label><label>{{star.birthday}}</label> <br>
+  <label>Growth </label><label>{{star.growth}}</label> <br>
+  <label>Is Removed </label><label>{{star.isRemoved}}</label> <br>
+  <label>City </label><label>{{star.cityOfBirth}}</label> <br>
+  Movies:
+  <li *ngFor="let movie of star.moviesIds">
+    {{ movie }} movie
+  </li> <br>
+  Countries:
+  <li *ngFor="let country of star.countriesIds">
+    {{ country }} country
+  </li> <br>
+  Links:
+  <li *ngFor="let links of star.linksIds">
+    {{ links }} link
+  </li> <br>
+  Professions:
+  <li *ngFor="let profession of star.professionsIds">
+    {{ profession }} link
+  </li> <br>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="star.firstName"  /> <br>
+  <input type="text" [(ngModel)]="star.lastName"  /> <br>
+  <input type="text" [(ngModel)]="star.galleryId"  />
+</div>

@@ -9,6 +9,7 @@ import {ProfessionService} from './profession.service';
 })
 export class ProfessionComponent implements OnInit {
   public profession: Profession;
+  public professionList: Profession[] = [];
   constructor(private professionService: ProfessionService) {
     this.profession = new Profession();
   }
@@ -22,7 +23,7 @@ export class ProfessionComponent implements OnInit {
     });
   }
   professionDelete() {
-    this.professionService.deleteProfession(6, (success) => {
+    this.professionService.deleteProfession(17, (success) => {
       this.profession = <Profession>success;
     });
   }
@@ -33,10 +34,15 @@ export class ProfessionComponent implements OnInit {
   }
 
   professionPut() {
-    this.professionService.updateProfession(7, this.profession, (success) => {
+    this.professionService.updateProfession(2, this.profession, (success) => {
       this.profession = <Profession>success;
     });
 
+  }
+  testAll() {
+    this.professionService.showAll( (success) => {
+      this.professionList = <Profession[]>success;
+    });
   }
 
 }
