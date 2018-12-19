@@ -7,9 +7,11 @@ import { CountryPageComponent } from './country/country.component';
 import { UserPageComponent } from './user/user.component';
 import { PageComponent } from './page.component';
 import { CustomComponentModule } from '../custom-component/customComponents.module';
+
 import { LinksPageComponent } from './links/links.component';
 import { PosterPageComponent } from './poster/poster.component';
 import { UserReviewMarkPageComponent } from './user-review-mark/user-review-mark.component';
+import { MovieMarkPageComponent } from './movieMark/movieMark.component';
 
 const appRoutes: Routes = [
 
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   { path: 'users', component: UserPageComponent },
   { path: 'links', component: LinksPageComponent },
   { path: 'poster', component: PosterPageComponent },
-  { path: 'user-review-mark', component: UserReviewMarkPageComponent }
+  { path: 'user-review-mark', component: UserReviewMarkPageComponent },
+  { path: 'moviemark', component: MovieMarkPageComponent }
 ];
 
 @NgModule({
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     UserPageComponent,
     LinksPageComponent,
     PosterPageComponent,
-    UserReviewMarkPageComponent
+    UserReviewMarkPageComponent,
+    MovieMarkPageComponent
   ],
   providers: [],})
   export class PageModule {
