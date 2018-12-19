@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CustomComponentModule } from './custom-component/customComponents.module';
+import { PageModule } from './page/page.module';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { CustomComponentModule } from './custom-component/customComponents.modul
   imports: [
     BrowserModule,
     FormsModule,
-    CustomComponentModule
+    PageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
