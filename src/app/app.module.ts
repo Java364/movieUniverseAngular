@@ -7,9 +7,11 @@ import { CustomComponentModule } from './custom-component/customComponents.modul
 import { PageModule } from './page/page.module';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
   ],
   imports: [
     BrowserModule,
