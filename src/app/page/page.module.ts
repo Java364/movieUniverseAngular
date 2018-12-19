@@ -6,12 +6,14 @@ import { ProfessionPageComponent } from './profession/profession.component';
 import { CountryPageComponent } from './country/country.component';
 import { PageComponent } from './page.component';
 import { CustomComponentModule } from '../custom-component/customComponents.module';
+import { PosterPageComponent } from './poster/poster.component';
 
 const appRoutes: Routes = [
     { path: 'movie', component: MoviePageComponent },
     { path: 'star', component: StarPageComponent },
     { path: 'profession', component: ProfessionPageComponent },
-    { path: 'country', component: CountryPageComponent }
+    { path: 'country', component: CountryPageComponent },
+    { path: 'poster', component: PosterPageComponent }
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
         MoviePageComponent,
         StarPageComponent,
         ProfessionPageComponent,
-        CountryPageComponent
+        CountryPageComponent,
+        PosterPageComponent
     ],
     providers: [],
 })
