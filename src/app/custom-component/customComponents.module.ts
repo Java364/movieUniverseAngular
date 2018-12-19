@@ -8,6 +8,9 @@ import { CountryService } from './country/country.service';
 import { LinksComponent } from './links/links.component';
 import { LinksService } from './links/links.service';
 
+import { UserComponent } from './users/user.component';
+import { UserService } from './users/user.service';
+
 import { PosterComponent } from './poster/poster.component';
 import { PosterService } from './poster/poster.service';
 
@@ -20,19 +23,20 @@ import {ProfessionComponent} from './profession/profession.component';
 
 
 @NgModule({
-    declarations: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent],
+    declarations: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent, UserComponent],
     imports: [
         HttpClientModule,
         CommonModule,
         FormsModule
     ],
-    exports: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent],
+    exports: [LinksComponent, PosterComponent, CountryComponent, MovieMarkComponent, ProfessionComponent, UserComponent],
     providers: [
         LinksService,
         PosterService,
         CountryService,
         MovieMarkService,
-        ProfessionService
+        ProfessionService,
+        UserService
     ],
 })
 export class CustomComponentModule { }
