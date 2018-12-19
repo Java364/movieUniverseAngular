@@ -1,10 +1,10 @@
 <div class="container">
-  LINKS
-<div>
- <!-- <button type="button" style="margin: 5px" class="btn btn-outline-primary"(click)="linkGet()">Find</button>-->
+  
+<!--<div>
+ &lt;!&ndash; <button type="button" style="margin: 5px" class="btn btn-outline-primary"(click)="linkGet()">Find</button>&ndash;&gt;
   <button type="button" style="margint: 5px" class="btn btn-outline-primary"(click)="showAll()">Show All</button>
 
-  <!--  <form>
+  &lt;!&ndash;  <form>
       <div class="form-group col-md-7">
         <label for="link">Link Name:</label>
         <input type="text" [(ngModel)]="links.linkName" id="link" class="form-control"  name="linkName"  />
@@ -23,7 +23,7 @@
         </select>
       </div><button type="button" class="btn btn-outline-success"(click)="createPost()">Create</button>
       &lt;!&ndash;<button type="button" style="margin: 5px" class="btn btn-outline-primary"(click)="updatePut()">Update</button>&ndash;&gt;
-    </form>-->
+    </form>&ndash;&gt;
   <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Create</button>
   <ul>
     <li *ngFor="let links of linksList">
@@ -36,7 +36,7 @@
     </li>
   </ul>
 </div>
-  <!--<img src="assets/images/df.jpg">-->
+  &lt;!&ndash;<img src="assets/images/df.jpg">&ndash;&gt;
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -65,5 +65,84 @@
         </div>
       </div>
     </div>
+  </div>-->
+
+
+
+
+
+
+
+
+
+  <div class="row p-3">
+    <h2 class="text-align-center col-md-10">Links page!</h2>
+    <!--<button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#userModal" (click)="createPost()">Add
+      new</button>-->
+    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#linksModal">Create</button>
   </div>
-</div>
+  <div class="row p-3">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Link Name:</th>
+        <th scope="col">Social Networking Site:</th>
+        <th scope="col">starID:</th>
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let links of linksList">
+        <th>{{links.linkName}}</th>
+        <td>{{links.socialNetworkingSite}}</td>
+        <td>{{links.starID}}</td>
+
+        <td><button (click)="linkGet(links.id)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#linksModal">Edit</button></td>
+        <td><button (click)="linkDelete(links.id)" type="button" class="btn btn-outline-danger">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="linksModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Link</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" for="name">Link Name:</label>
+              <div class="col-sm-8">
+                <input type="email" [(ngModel)]="links.linkName" name="linkName" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" for="name">socialNetworkingSite:</label>
+              <div class="col-sm-8">
+                <select  class="form-control form-control-lg " [(ngModel)]="links.socialNetworkingSite" name="socialNetworkingSite">
+                  <option  value="FACEBOOK" >FACEBOOK</option>
+                  <option   value="INSTAGRAM">INSTAGRAM</option>
+                  <option   value="TWITTER">TWITTER</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" for="name">StarID:</label>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="links.starID" name="starID" class="form-control" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="createPost()" data-dismiss="modal">Save changes</button>
+            </div>
+          </form></div></div>
+
+
