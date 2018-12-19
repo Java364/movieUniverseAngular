@@ -2,14 +2,13 @@
   PROFESSION
   <div>
     <button type="button"style="margin: 5px" class="btn btn-primary" (click)="professionGet()">Find</button>
-    <!--<button type="button" class="btn btn-success"(click)="createPost()">Create</button>-->
-
     <button type="button" style="margin: 5px" class="btn btn-primary" (click)="testAll()">Show All</button>
     <button type="button" style="margin: 5px" class="btn btn-primary" (click)="professionDelete()">Delete</button>
 
     <div>
       <label>Profession Type:</label>
       <input type="text" [(ngModel)]="profession.professionType"/>
+      <input type="text" [(ngModel)]="profession.starIds"/>
 
     </div>
     <button type="button" style="margin: 5px" class="btn btn-success"(click)="professionPost()">Create</button>
