@@ -1,6 +1,24 @@
-<a routerLink="/movie" class="btn btn-primary">Movie</a>
-<a routerLink="/star" class="btn btn-primary">Star</a>
-<a routerLink="/country" class="btn btn-primary">Country</a>
-<a routerLink="/profession" class="btn btn-primary">Profession</a>
-<a routerLink="/moviemark" class="btn btn-primary">MovieMark</a> 
-<router-outlet></router-outlet>
+
+<ul class="nav nav-tabs nav-fill mt-5">
+    <li class="nav-item">
+        <a routerLink="/movie" class="nav-link">Movie</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/star" class="nav-link">Star</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/country" class="nav-link">Country</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/profession" class="nav-link">Profession</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/users" class="nav-link">Users</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/moviemark" class="nav-link">MovieMark</a>
+    </li> 
+</ul>
+<div class="border border-top-0 rounded p-5">
+        <router-outlet></router-outlet>
+</div>
