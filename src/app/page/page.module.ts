@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'star', component: StarPageComponent },
   { path: 'profession', component: ProfessionPageComponent },
   { path: 'country', component: CountryPageComponent },
-  { path: 'users', component: UserPageComponent },
+  /*{ path: 'users', component: UserPageComponent },*/
   { path: 'links', component: LinksPageComponent },
   { path: 'poster', component: PosterPageComponent }
 ];
@@ -37,12 +37,11 @@ const appRoutes: Routes = [
     StarPageComponent,
     ProfessionPageComponent,
     CountryPageComponent,
-    UserPageComponent,
+   /* UserPageComponent,*/
     LinksPageComponent,
     PosterPageComponent
   ],
   providers: [],})
   export class PageModule {
-  
+
   }
-  

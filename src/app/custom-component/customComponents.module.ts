@@ -8,9 +8,8 @@ import { CountryService } from './country/country.service';
 import { LinksComponent } from './links/links.component';
 import { LinksService } from './links/links.service';
 
-import { UserComponent } from './users/user.component';
-import { UserService } from './users/user.service';
-
+/*import { UserComponent } from './users/user.component';
+import { UserService } from './users/user.service';*/
 import { PosterComponent } from './poster/poster.component';
 import { PosterService } from './poster/poster.service';
 
@@ -31,8 +30,8 @@ import { StarService } from './star/star.service';
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
-        CountrySelectorComponent,
-        UserComponent
+        CountrySelectorComponent/*,
+        UserComponent*/
     ],
     imports: [
         HttpClientModule,
@@ -46,8 +45,8 @@ import { StarService } from './star/star.service';
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
-        CountrySelectorComponent,
-        UserComponent
+        CountrySelectorComponent/*,
+        UserComponent*/
     ],
     providers: [
         LinksService,
@@ -55,8 +54,8 @@ import { StarService } from './star/star.service';
         CountryService,
         MovieMarkService,
         ProfessionService,
-        StarService,
-        UserService
+        StarService/*,
+        UserService*/
     ],
 })
 export class CustomComponentModule { }

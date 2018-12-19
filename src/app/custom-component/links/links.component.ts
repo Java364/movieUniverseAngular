@@ -15,15 +15,16 @@ export class LinksComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showAll();
   }
 
-  linkGet() {
-  this.linksService.getLinks(6, (success) => {
+  linkGet(id: number) {
+  this.linksService.getLinks(id, (success) => {
     this.links = <Links>success;
   });
 }
-  linkDelete() {
-    this.linksService.deleteLinks(25, (success) => {
+  linkDelete(id: number) {
+    this.linksService.deleteLinks(id, (success) => {
       this.links = <Links>success;
     });
   }
@@ -33,15 +34,22 @@ export class LinksComponent implements OnInit {
     });
   }
 
-  updatePut() {
-    this.linksService.updateLinks(6, this.links, (success) => {
+  updatePut(id: number) {
+    this.linksService.updateLinks(id, this.links, (success) => {
       this.links = <Links>success;
     });
 
   }
-  testAll() {
+  showAll() {
     this.linksService.showAll( (success) => {
       this.linksList = <Links[]>success;
     });
   }
+ /* saveCountry = () => {
+    if (this.links.id > -1) {
+      this.updatePut(this.links.id);
+    } else {
+      this.createPost();
+    }
+  }*/
 }
