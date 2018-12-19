@@ -17,7 +17,7 @@ export class ProfessionComponent implements OnInit {
   }
 
   professionGet() {
-    this.professionService.getProfession(7, (success) => {
+    this.professionService.getProfession(2, (success) => {
       this.profession = <Profession>success;
     });
   }
