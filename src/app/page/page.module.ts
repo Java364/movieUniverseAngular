@@ -7,8 +7,10 @@ import { CountryPageComponent } from './country/country.component';
 import { UserPageComponent } from './user/user.component';
 import { PageComponent } from './page.component';
 import { CustomComponentModule } from '../custom-component/customComponents.module';
+
 import { LinksPageComponent } from './links/links.component';
 import { PosterPageComponent } from './poster/poster.component';
+import { MovieMarkPageComponent } from './movieMark/movieMark.component';
 
 const appRoutes: Routes = [
   { path: 'movie', component: MoviePageComponent },
@@ -17,7 +19,8 @@ const appRoutes: Routes = [
   { path: 'country', component: CountryPageComponent },
   { path: 'users', component: UserPageComponent },
   { path: 'links', component: LinksPageComponent },
-  { path: 'poster', component: PosterPageComponent }
+  { path: 'poster', component: PosterPageComponent },
+  { path: 'moviemark', component: MovieMarkPageComponent }
 ];
 
 @NgModule({
@@ -39,10 +42,11 @@ const appRoutes: Routes = [
     CountryPageComponent,
     UserPageComponent,
     LinksPageComponent,
-    PosterPageComponent
+    PosterPageComponent,
+    MovieMarkPageComponent
   ],
   providers: [],})
   export class PageModule {
   
   }
-  
+
