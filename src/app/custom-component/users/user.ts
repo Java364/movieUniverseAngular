@@ -7,7 +7,9 @@ export class User {
     lastName: string;
     birthday: number;
     isRemoved: boolean;
-    
+    entryCreationDate: string;
+    entryLastUpdate: string;
+    _links: [];
     constructor() {
 
     }
