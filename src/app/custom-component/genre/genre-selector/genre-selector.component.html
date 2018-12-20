@@ -1,0 +1,8 @@
+<div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Genre selector</label>
+        <select multiple [(ngModel)]="selectedGenres" class="form-control">
+            <option *ngFor="let genre of genres" [value]="genre.genreId">{{genre.genreName}}</option>
+        </select>
+    </div>
+</div>

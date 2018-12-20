@@ -15,6 +15,10 @@ export class CountrySelectorComponent implements OnInit {
         return this.selectedCountries;
     }
 
+    public setSelectedCountries(countries: number[]) {
+        this.selectedCountries = countries;
+    }
+
     constructor(private countryService: CountryService) {
     }
 

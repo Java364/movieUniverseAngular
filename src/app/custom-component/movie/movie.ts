@@ -1,10 +1,12 @@
 export class Movie {
-    name: string;
+    movieName: string;
     id: number;
     year: number;
     description: string;
     duration: number;
     ageLimitation: number;
+    countries: number[];
+    genres: number[];
 
     constructor() {
 

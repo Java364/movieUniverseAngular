@@ -30,6 +30,7 @@ import {GenreComponent} from './genre/genre.component';
 import {GenreService} from './genre/genre.service';
 import {UserReviewComponent} from './user-review/user-review.component';
 import {UserReviewService} from './user-review/user-review.service';
+import { GenreSelectorComponent } from './genre/genre-selector/genre-selector.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {UserReviewService} from './user-review/user-review.service';
     CountrySelectorComponent,
     GenreComponent,
     UserComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    GenreSelectorComponent
   ],
   imports: [
     HttpClientModule,
@@ -61,7 +63,8 @@ import {UserReviewService} from './user-review/user-review.service';
     GenreComponent,
     CountrySelectorComponent,
     UserComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    GenreSelectorComponent
   ],
   providers: [
     MovieService,

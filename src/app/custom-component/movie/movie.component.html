@@ -1,46 +1,102 @@
 <div class="container">
-    <div class="offset-3">
-        <button class="btn btn-dark hover" (click)="getMovie()">FindById</button>
-        <button class="btn btn-dark hover" (click)="createMovie()">Create</button>
-        <button class="btn btn-dark hover" (click)="updateMovie()">Update</button>
-        <button class="btn btn-dark hover" (click)="showAllMovies()">ShowAll</button>
-        <button class="btn btn-dark hover" (click)="deleteMovie()">Delete</button>
-    </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="createNew()">Add new</button>
-    <div class="offset-3">
-        <div *ngFor="let movie of movies">
-            <label>{{movie.id}}</label>
-            <label>{{movie.name}}</label>
-          <label>{{movie.year}}</label>
-          <label>{{movie.description}}</label>
-          <label>{{movie.ageLimitation}}</label>
-          <label>{{movie.duration}}</label>
-            <button (click)="getMovie(movie.id)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
-            <button (click)="deleteMovie(movie.id)">Delete</button>
-        </div>
-    </div>
+    <div class="row p-3">
+        <h2 class="text-align-center col-md-10">Movie page!</h2>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="createNew()">Add
+    new</button>
+</div>
+  <table class="table table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Year</th>
+      <th>Duration</th>
+      <th>Age Limitation</th>
+      
+      <th></th>
+      <th></th>
+    </tr>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{movie.movieName}}</td>
+        <td>{{movie.description}}</td>
+        <td>{{movie.year}}</td>
+        <td>{{movie.duration}}</td>
+        <td>{{movie.ageLimitation}}</td>
+
+        <td>
+          <button (click)="getMovie(movie.id)" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+        </td>
+        <td>  
+          <button (click)="deleteMovie(movie.id)" type="button" class="btn btn-outline-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="name">Movie name:</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="movie.movieName" name="name" class="form-control" />
             </div>
-            <div class="modal-body">
-                <div class="form-group col-md-7">
-                    <label for="name">Name:</label>
-                    <input type="text" [(ngModel)]="movie.name" name="name" class="form-control" />
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="description">Description:</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="movie.description" name="description" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="ageLimitation">Age limitation:</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="movie.ageLimitation" name="ageLimitation" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="year">Year:</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="movie.year" name="year" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="duration">Duration:</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="movie.duration" name="duration" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-sm-4 col-form-label" for="duration">Countries:</label>
+              <div class="col-sm-8">
+                  <app-country-selector #countrySelector></app-country-selector>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="duration">Genres:</label>
+                <div class="col-sm-8">
+                    <app-genre-selector #genreSelector></app-genre-selector>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveMovie()" data-dismiss="modal">Save changes</button>
-            </div>
-        </div>
+              </div>
+  
+            
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary" (click)="saveMovie()" data-dismiss="modal">Save changes</button>
+      </div>
     </div>
+  </div>
 </div>

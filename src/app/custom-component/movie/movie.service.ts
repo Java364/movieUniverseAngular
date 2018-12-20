@@ -8,21 +8,21 @@ export class MovieService {
     }
 
     public getById(id: number, callback: Function) {
-        this.httpClient.get('http://localhost:8080/movie/show/' + id).subscribe(
+        this.httpClient.get('http://localhost:8080/movie/' + id).subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
     public getAll(callback: Function) {
-        this.httpClient.get('http://localhost:8080/movie/list').subscribe(
+        this.httpClient.get('http://localhost:8080/movie').subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
     public create(movie: Movie, callback: Function) {
-        this.httpClient.post('http://localhost:8080/movie/create', movie).subscribe(
+        this.httpClient.post('http://localhost:8080/movie', movie).subscribe(
             (success) => {
                 callback(success);
             }
@@ -30,7 +30,7 @@ export class MovieService {
     }
 
     public update(id: number, movie: Movie, callback: Function) {
-        this.httpClient.put('http://localhost:8080/movie/update/' + id, movie).subscribe(
+        this.httpClient.put('http://localhost:8080/movie/' + id, movie).subscribe(
             (success) => {
                 callback(success);
             }
@@ -38,7 +38,7 @@ export class MovieService {
     }
 
     public delete(id: number, callback: Function) {
-        this.httpClient.delete('http://localhost:8080/movie/delete/' + id).subscribe(
+        this.httpClient.delete('http://localhost:8080/movie/' + id).subscribe(
             (success) => {
                 callback(success);
             }
