@@ -26,17 +26,34 @@
                 <input type="text" [(ngModel)]="userReviewMark.mark" id="mark" class="form-control" name="mark" />
             </div>
         </form>
-        <ul>
-            <li *ngFor="let list of userReviewMarkList">
-                <div> id: {{list.id}}</div>
-                <div> ReviewerID: {{list.reviewerId}}</div>
-                <div>userReviewId: {{list.userReviewId}}</div>
-                <div> mark: {{list.mark}}</div>
-                <button (click)="testDelete(list.id)">Delete</button>
-            </li>
-        </ul>
     </div>
 </div>
+    <div class="row p-3">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Mark</th>
+                    <th scope="col">ReviewerId</th>
+                    <th scope="col">ReviewId</th>
+                 
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userReviewMark of userReviewMarkList">
+                    <th>{{userReviewMark.id}}</th>
+                    <td>{{userReviewMark.mark}}</td>
+                    <td>{{userReviewMark.reviewerId}}</td>
+                    <td>{{userReviewMark.userReviewId}}</td>
+                    <td><button (click)="testDelete(userReviewMark.id)" type="button" class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+  
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
