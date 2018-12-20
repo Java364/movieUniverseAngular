@@ -29,7 +29,7 @@
                         data-target="#userEditModal">Edit</button></td>
                 <td><button (click)="deleteUser(user.userId)" type="button" class="btn btn-outline-danger">Delete</button></td>
                 <td><button (click)="getUser(user.userId)" type="button" class="btn btn-outline-primary" data-toggle="modal"
-                    data-target="#userProfileModal">Edit</button></td>
+                        data-target="#userProfileModal">More</button></td>
             </tr>
         </tbody>
     </table>
@@ -95,22 +95,34 @@
     </div>
 </div>
 
-<div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content p-3">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger mr-auto" data-dismiss="modal">Close</button>
-                </div>
-    
+<div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User #{{user.userId}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-4">Email</div>
+                    <div class="col-8">{{user.email}}</div>
+                    <div class="col-4">First name</div>
+                    <div class="col-8">{{user.firstName}}</div>
+                    <div class="col-4">Last name</div>
+                    <div class="col-8">{{user.lastName}}</div>
+                    <div class="col-4">Birthday</div>
+                    <div class="col-8">{{user.birthday}}</div>
+                    <div class="col-4">Created</div>
+                    <div class="col-8">{{user.entryCreationDate}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger mr-auto" data-dismiss="modal">Close</button>
+            </div>
+
         </div>
     </div>
+</div>

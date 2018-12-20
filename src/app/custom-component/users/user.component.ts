@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
     getUser = (id: number) => {
         this.userService.getById(id, (success) => {
             this.user = <User>success;
+            console.log(this.user)
         });
     }
 
