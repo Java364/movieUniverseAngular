@@ -1,6 +1,6 @@
 <div class="row p-3">
     <h2 class="text-align-center col-md-10">User page!</h2>
-    <button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#userModal" (click)="createNew()">Add
+    <button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#userEditModal" (click)="createNew()">Add
         new</button>
 
 </div>
@@ -15,6 +15,7 @@
                 <th scope="col">Birthday</th>
                 <th scope="col">#</th>
                 <th scope="col">#</th>
+                <th scope="col">#</th>
             </tr>
         </thead>
         <tbody>
@@ -24,15 +25,17 @@
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
                 <td>{{user.birthday}}</td>
-                <td><button (click)="getUser(user.id)" type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#userModal">Edit</button></td>
-                <td><button (click)="deleteUser(user.id)" type="button" class="btn btn-outline-danger">Delete</button></td>
+                <td><button (click)="getUser(user.userId)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        data-target="#userEditModal">Edit</button></td>
+                <td><button (click)="deleteUser(user.userId)" type="button" class="btn btn-outline-danger">Delete</button></td>
+                <td><button (click)="getUser(user.userId)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#userProfileModal">Edit</button></td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="userEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content p-3">
             <div class="modal-header">
@@ -78,7 +81,6 @@
                         <div class="col-sm-8">
                             <input type="text" [(ngModel)]="user.birthday" name="birthday" class="form-control" />
                         </div>
-
                     </div>
 
                 </form>
@@ -92,3 +94,23 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger mr-auto" data-dismiss="modal">Close</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
