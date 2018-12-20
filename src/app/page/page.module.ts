@@ -12,6 +12,7 @@ import {CustomComponentModule} from '../custom-component/customComponents.module
 import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
 import {MovieMarkPageComponent} from './movieMark/movieMark.component';
+import { UserReviewPageComponent } from './user-review-page/user-review-page.component';
 
 const appRoutes: Routes = [
 
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   {path: 'links', component: LinksPageComponent},
   {path: 'poster', component: PosterPageComponent},
   {path: 'moviemark', component: MovieMarkPageComponent},
-  {path: 'genre', component: GenrePageComponent}
+  {path: 'genre', component: GenrePageComponent},
+  {path: 'user-review', component: UserReviewPageComponent}
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     LinksPageComponent,
     PosterPageComponent,
     GenrePageComponent,
-    MovieMarkPageComponent
+    MovieMarkPageComponent,
+    UserReviewPageComponent
   ],
   providers: [],
 })
