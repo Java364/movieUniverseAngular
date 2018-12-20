@@ -26,6 +26,7 @@ export class UserReviewMarkComponent implements OnInit {
   testPost() {
     this.userReviewMarkService.createUserReviewMark(this.userReviewMark, (success) => {
       this.userReviewMark = <UserReviewMark>success;
+      this.testAll();
     });
   }
   testPut = (id: number) => {
@@ -34,6 +35,7 @@ export class UserReviewMarkComponent implements OnInit {
     }
     this.userReviewMarkService.updateUserReviewMark(id, this.userReviewMark, (success) => {
       this.userReviewMark = <UserReviewMark>success;
+      this.testAll();
     });
   }
  
@@ -42,7 +44,7 @@ export class UserReviewMarkComponent implements OnInit {
       return;
     }
     this.userReviewMarkService.deleteUserReviewMark(id, (success) => {
-      this.userReviewMark = <UserReviewMark>success;
+      this.testAll();
     });
   }
   testAll() {

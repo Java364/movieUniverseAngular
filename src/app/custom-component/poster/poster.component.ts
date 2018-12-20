@@ -34,7 +34,7 @@ export class PosterComponent implements OnInit {
       return;
     }
     this.posterService.deletePoster(id, (success) => {
-      this.poster = <Poster>success;
+    
     });
   }
     updatePosterById = (id: number) => {

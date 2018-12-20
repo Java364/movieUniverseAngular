@@ -12,14 +12,14 @@ export class UserReviewMarkService {
             }
         );
     }
-    public createUserReviewMark( userReviewMark:UserReviewMark, callback: Function) {
+    public createUserReviewMark(userReviewMark: UserReviewMark, callback: Function) {
         this.httpClient.post('http://localhost:8080/userReviewMark', userReviewMark).subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
-    public updateUserReviewMark(id: number, userReviewMark:UserReviewMark, callback: Function, ) {
+    public updateUserReviewMark(id: number, userReviewMark: UserReviewMark, callback: Function, ) {
         this.httpClient.put('http://localhost:8080/userReviewMark/' + id, userReviewMark).subscribe(
             (success) => {
                 callback(success);
@@ -35,9 +35,9 @@ export class UserReviewMarkService {
     }
     public getAll(callback: Function) {
         this.httpClient.get('http://localhost:8080/userReviewMarks').subscribe(
-          (success) => {
-            callback(success);
-          }
+            (success) => {
+                callback(success);
+            }
         );
-      }
+    }
 }

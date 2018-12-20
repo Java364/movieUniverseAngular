@@ -32,6 +32,7 @@
                 <div> ReviewerID: {{list.reviewerId}}</div>
                 <div>userReviewId: {{list.userReviewId}}</div>
                 <div> mark: {{list.mark}}</div>
+                <button (click)="testDelete(list.id)">Delete</button>
             </li>
         </ul>
     </div>
@@ -48,7 +49,7 @@
             <div class="modal-body">
                 <div class="form-group col-md-7">
                     <label for="id">ID:</label>
-                    <input type="text" [(ngModel)]="userReviewMark.id" name="id2" class="form-control" />
+                    <input type="text" [(ngModel)]="userReviewMark.id" name="id" class="form-control" />
                 </div>
             </div>
             <div class="modal-footer">

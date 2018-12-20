@@ -4,7 +4,7 @@
         <button type="button" style="margin: 5px" class="btn btn-outline-primary" (click)="showPoster(poster.id)">Show</button>
         <button type="button" class="btn btn-outline-success" (click)="createPoster()">Create</button>
         <button type="button" style="margin: 5px" class="btn btn-outline-primary" (click)="updatePosterById(poster.id)">Update</button>
-        <button type="button" style="margin: 5px" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">DeleteById</button>
+        <button type="button" style="margin: 5px" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">DeleteById</button>
         <form>
             <div class="form-group col-md-7">
                 <label for="id">Poster id:</label>
@@ -27,7 +27,7 @@
        
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -39,7 +39,7 @@
                 <div class="modal-body">
                     <div class="form-group col-md-7">
                         <label for="id">ID:</label>
-                        <input type="text" [(ngModel)]="poster.id" name="id" class="form-control" />
+                        <input type="text" [(ngModel)]="poster.id" name="id3" class="form-control" />
                     </div>
                 </div>
                 <div class="modal-footer">
