@@ -129,6 +129,133 @@
           }
         }
       }
+    },
+    "genre-model": {
+      "root": "projects/genre-model/",
+      "sourceRoot": "projects/genre-model/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/genre-model",
+            "index": "projects/genre-model/src/index.html",
+            "main": "projects/genre-model/src/main.ts",
+            "polyfills": "projects/genre-model/src/polyfills.ts",
+            "tsConfig": "projects/genre-model/tsconfig.app.json",
+            "assets": [
+              "projects/genre-model/src/favicon.ico",
+              "projects/genre-model/src/assets"
+            ],
+            "styles": [
+              "projects/genre-model/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/genre-model/src/environments/environment.ts",
+                  "with": "projects/genre-model/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "genre-model:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "genre-model:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "genre-model:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/genre-model/src/test.ts",
+            "polyfills": "projects/genre-model/src/polyfills.ts",
+            "tsConfig": "projects/genre-model/tsconfig.spec.json",
+            "karmaConfig": "projects/genre-model/karma.conf.js",
+            "styles": [
+              "projects/genre-model/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/genre-model/src/favicon.ico",
+              "projects/genre-model/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/genre-model/tsconfig.app.json",
+              "projects/genre-model/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "genre-model-e2e": {
+      "root": "projects/genre-model-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/genre-model-e2e/protractor.conf.js",
+            "devServerTarget": "genre-model:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "genre-model:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/genre-model-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "movieUniverseAngular"
