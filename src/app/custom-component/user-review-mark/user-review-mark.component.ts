@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserReviewMark } from './userReviewMark';
 import { UserReviewMarkService } from './userReviewMark.service';
 
@@ -9,32 +9,45 @@ import { UserReviewMarkService } from './userReviewMark.service';
 })
 export class UserReviewMarkComponent implements OnInit {
   public userReviewMark: UserReviewMark;
+  public userReviewMarkList: UserReviewMark[] = [];
 
-  constructor(private userReviewMarkService:UserReviewMarkService) {
+  constructor(private userReviewMarkService: UserReviewMarkService) {
     this.userReviewMark = new UserReviewMark();
-   }
+  }
 
   ngOnInit() {
   }
-  testGet() {
-    this.userReviewMarkService.getUserReviewMark(3, (success) => {
+  testGet = (id: number) => {
+    this.userReviewMarkService.getUserReviewMark(id, (success) => {
       this.userReviewMark = <UserReviewMark>success;
     }
-    )
+    );
   }
   testPost() {
     this.userReviewMarkService.createUserReviewMark(this.userReviewMark, (success) => {
       this.userReviewMark = <UserReviewMark>success;
-    })
+    });
   }
-  testPut() {
-    this.userReviewMarkService.updateUserReviewMark(3, this.userReviewMark, (success) => {
+  testPut = (id: number) => {
+    if (!confirm('This Mark(id =' + id + ') will be updated')) {
+      return;
+    }
+    this.userReviewMarkService.updateUserReviewMark(id, this.userReviewMark, (success) => {
       this.userReviewMark = <UserReviewMark>success;
-    })
+    });
   }
-  testDelete() {
-    this.userReviewMarkService.deleteUserReviewMark(1, (success) => {
+ 
+  testDelete = (id: number) => {
+    if (!confirm('This Mark(id =' + id + ') will be removed')) {
+      return;
+    }
+    this.userReviewMarkService.deleteUserReviewMark(id, (success) => {
       this.userReviewMark = <UserReviewMark>success;
-    })
+    });
+  }
+  testAll() {
+    this.userReviewMarkService.getAll( (success) => {
+      this.userReviewMarkList = <UserReviewMark[]>success;
+    });
   }
 }

@@ -1,7 +1,8 @@
 export class UserReviewMark
 {
+    id:number;
     mark:string;
-    reviwerId:number;
+    reviewerId:number;
     userReviewId:number;
     constructor() { }
 }

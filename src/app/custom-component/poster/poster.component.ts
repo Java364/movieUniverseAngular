@@ -15,27 +15,34 @@ export class PosterComponent implements OnInit {
   }
 
 
-  ngOnInit():void {
+  ngOnInit(): void {
   }
-  testGet() {
-    this.posterService.getPoster(7, (success) => {
+  showPoster = (id:number)=> {
+    this.posterService.getPoster(id, (success) => {
       this.poster = <Poster>success;
     }
-    )
+    );
   }
-  testPost() {
-    this.posterService.createPoster(this.poster, (success) => {
+  createPoster() {
+    this.posterService.savePoster(this.poster, (success) => {
       this.poster = <Poster>success;
-    })
+    });
   }
-  testPut() {
-    this.posterService.updatePoster(7, this.poster, (success) => {
+  
+  deletePosterById = (id: number) => {
+    if (!confirm('This poster(id =' + id + ') will be removed')) {
+      return;
+    }
+    this.posterService.deletePoster(id, (success) => {
       this.poster = <Poster>success;
-    })
+    });
   }
-  testDelete() {
-    this.posterService.deletePoster(9, (success) => {
+    updatePosterById = (id: number) => {
+    if (!confirm('This poster(id =' + id + ') will be updated')) {
+      return;
+    }
+    this.posterService.putPoster(id,this.poster, (success) => {
       this.poster = <Poster>success;
-    })
+    });
   }
 }

@@ -12,14 +12,14 @@ export class PosterService {
             }
         );
     }
-    public createPoster(poster: Poster, callback: Function) {
+    public savePoster(poster: Poster, callback: Function) {
         this.httpClient.post('http://localhost:8080/poster/create', poster).subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
-    public updatePoster(id: number, poster: Poster, callback: Function, ) {
+    public putPoster(id: number, poster: Poster, callback: Function, ) {
         this.httpClient.put('http://localhost:8080/poster/update/' + id, poster).subscribe(
             (success) => {
                 callback(success);
