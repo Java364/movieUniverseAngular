@@ -39,7 +39,7 @@ export class UserService {
     }
 
     public update(id: number, user: User, callback: Function) {
-        this.httpClient.put('http://localhost:8080/users/' + user, user).subscribe(
+        this.httpClient.put('http://localhost:8080/users/' + id, user).subscribe(
             (success) => {
                 callback(success);
             }
@@ -47,10 +47,18 @@ export class UserService {
     }
 
     public delete(id: number, callback: Function) {
-        this.httpClient.delete('http://localhost:8080/users/' + id).subscribe(
+        this.httpClient.delete('http://localhost:8080/users/' + id + '/remove').subscribe(
             (success) => {
                 callback(success);
             }
         );
+    }
+
+    public getLinkData(url:string, callback: Function) {
+        this.httpClient.get(url).subscribe(
+            (success) => {
+                callback(success);
+            }
+        )
     }
 }

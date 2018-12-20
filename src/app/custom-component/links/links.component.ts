@@ -25,18 +25,20 @@ export class LinksComponent implements OnInit {
 }
   linkDelete(id: number) {
     this.linksService.deleteLinks(id, (success) => {
-      this.links = <Links>success;
+      this.showAll();
     });
   }
   createPost() {
     this.linksService.createLinks(this.links, (success) => {
       this.links = <Links>success;
+      this.showAll();
     });
   }
 
   updatePut(id: number) {
     this.linksService.updateLinks(id, this.links, (success) => {
       this.links = <Links>success;
+      this.showAll();
     });
 
   }

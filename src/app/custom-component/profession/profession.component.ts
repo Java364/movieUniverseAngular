@@ -25,18 +25,20 @@ export class ProfessionComponent implements OnInit {
   }
   professionDelete(id: number) {
     this.professionService.deleteProfession(id, (success) => {
-      this.profession = <Profession>success;
+      this.testAll();
     });
   }
   professionPost() {
     this.professionService.createProfession(this.profession, (success) => {
       this.profession = <Profession>success;
+      this.testAll();
     });
   }
 
   professionPut(id: number) {
     this.professionService.updateProfession(id, this.profession, (success) => {
       this.profession = <Profession>success;
+      this.testAll();
     });
 
   }

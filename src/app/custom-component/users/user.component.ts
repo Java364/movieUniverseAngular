@@ -15,54 +15,56 @@ export class UserComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.showAllUsersIncludingRemoved();
+        this.showAllUsers();
     }
 
     getUser = (id: number) => {
         this.userService.getById(id, (success) => {
             this.user = <User>success;
+            this.user['reviewsList'] = [];
+            this.user['movieMarkList'] = [];
+            this.userService.getLinkData(this.user._links['reviews'].href, (success) =>{
+                this.user['reviewsList'] = success;
+            });
+            this.userService.getLinkData(this.user._links['movieMarks'].href, (success) =>{
+                this.user['movieMarkList'] = success;
+            });
         });
     }
 
     showAllUsers = () => {
         this.userService.getAll((success) => {
-            this.users = <User[]>success;
+            this.users = <User[]>(success._embedded.userDTOList);
         });
     }
 
     showAllUsersIncludingRemoved = () => {
         this.userService.getAllIncludingRemoved((success) => {
-            this.users = <User[]>success;
+            this.users = <User[]>(success._embedded.userDTOList);
         });
     }
 
     createUser = () =>  {
         this.userService.create(this.user, (success) => {
             this.user = <User>success;
+            this.showAllUsers();
         });
     }
 
     updateUser = (id: number) =>  {
         this.userService.update(id, this.user, (success) => {
             this.user = <User>success;
+            this.showAllUsers();
         });
     }
 
-    removeUser = (id: number) => {
-        if (!confirm('This user will be removed.')) {
-            return;
-        }
-        this.userService.delete(id, (success) => {
-            this.user = <User>success;
-        });
-    }
 
     deleteUser = (id: number) => {
         if (!confirm('This user will be completely deleted.')) {
             return;
         }
         this.userService.delete(id, (success) => {
-            this.user = <User>success;
+            this.showAllUsers();
         });
     }
 

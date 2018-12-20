@@ -1,37 +1,5 @@
 <div class="container">
- <!-- PROFESSION
-  <div>
-    <button type="button"style="margin: 5px" class="btn btn-outline-primary" (click)="professionGet()">Find</button>
-    <button type="button" style="margint: 5px" class="btn btn-outline-primary"(click)="testAll()">Show All</button>
-    <button type="button" style="margin: 5px" class="btn btn-outline-danger" (click)="professionDelete()">Delete</button>
 
-    <div>
-      <label>Profession Type:</label>
-      <input type="text" [(ngModel)]="profession.professionType"/>
-      &lt;!&ndash;<input type="text" [(ngModel)]="profession.starIds"/>&ndash;&gt;
-      &lt;!&ndash;<div><span>star</span>
-        <p *ngFor="let starIds of profession">{{ profession.starIds }}</p>
-      </div>&ndash;&gt;
-      <li *ngFor="let profession of profession.starIds">
-        {{ profession }}
-      </li> <br>
-     &lt;!&ndash; <ul>
-        <li *ngfor="let starIds of profession">{{ starIds.starIds }}</li>
-      </ul>&ndash;&gt;
-
-    </div>
-    <button type="button" style="margin: 5px" class="btn btn-outline-success"(click)="professionPost()">Create</button>
-    <button type="button" style="margin: 5px" class="btn btn-outline-primary "(click)="professionPut()">Update</button>
-   &lt;!&ndash; <ul>
-      <li *ngFor="let list of professionList">
-        <div> Name: {{list.professionType}}</div>
-        <div> starIds: {{list.starIds}}</div>
-
-        &lt;!&ndash;<div>Social Networking Site: {{list.socialNetworkingSite}}</div>
-        <div> starID: {{list.starID}}</div>&ndash;&gt;
-      </li>
-    </ul>&ndash;&gt;
-  </div>-->
 
 
 
@@ -47,8 +15,8 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th scope="col">Link Name:</th>
-        <th scope="col">Social Networking Site:</th>
+        <th scope="col">Type:</th>
+        <th scope="col">StarID:</th>
 
 
 
@@ -69,30 +37,7 @@
   </div>
 
 
- <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">links</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group col-md-7">
-            <label for="name">Type:</label>
-            <input type="text" [(ngModel)]="profession.professionType" name="professionType" class="form-control" />
 
-
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="professionPost()" data-dismiss="modal">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>-->
 
 
 
