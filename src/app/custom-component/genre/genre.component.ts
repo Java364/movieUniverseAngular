@@ -27,7 +27,6 @@ export class GenreComponent implements OnInit {
   showAllGenres = () => {
     this.genreService.getAll((success) => {
       this.genres = <Genre[]>(success._embedded.genres);
-      console.log(this.genres);
     });
   }
 

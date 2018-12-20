@@ -7,23 +7,15 @@ export class GenreService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getById(id: number, callback: Function) {
-    this.httpClient.get('http://localhost:8080/genre/' + id).subscribe(
-      (success) => {
-        callback(success);
-      }
-    );
-  }
-
   public getAll(callback: Function) {
-    this.httpClient.get('http://localhost:8080/genre/show/all').subscribe(
+    this.httpClient.get('http://localhost:8080/genre/all').subscribe(
       (success) => {
         callback(success);
       }
     );
   }
   public create(country: Genre, callback: Function) {
-    this.httpClient.post('http://localhost:8080/genre/create/', country).subscribe(
+    this.httpClient.post('http://localhost:8080/genre', country).subscribe(
       (success) => {
         callback(success);
       }
