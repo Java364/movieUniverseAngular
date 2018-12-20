@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryService } from './country/country.service';
 
+import { MovieComponent } from './movie/movie.component';
+import { MovieService } from './movie/movie.service';
+
+
 import { LinksComponent } from './links/links.component';
 import { LinksService } from './links/links.service';
 
@@ -22,9 +26,12 @@ import { ProfessionComponent } from './profession/profession.component';
 import { CountrySelectorComponent } from './country/country-selector/country-selector.component';
 import { StarComponent } from './star/star.component';
 import { StarService } from './star/star.service';
+import { GenreComponent } from './genre/genre.component';
+import {GenreService} from './genre/genre.service';
 
 @NgModule({
     declarations: [
+        MovieComponent,
         LinksComponent,
         PosterComponent,
         CountryComponent,
@@ -32,6 +39,7 @@ import { StarService } from './star/star.service';
         ProfessionComponent,
         StarComponent,
         CountrySelectorComponent,
+        GenreComponent,
         UserComponent
     ],
     imports: [
@@ -40,22 +48,26 @@ import { StarService } from './star/star.service';
         FormsModule
     ],
     exports: [
+        MovieComponent,
         LinksComponent,
         PosterComponent,
         CountryComponent,
         MovieMarkComponent,
         ProfessionComponent,
         StarComponent,
+        GenreComponent,
         CountrySelectorComponent,
         UserComponent
     ],
     providers: [
+        MovieService,
         LinksService,
         PosterService,
         CountryService,
         MovieMarkService,
         ProfessionService,
         StarService,
+        GenreService,
         UserService
     ],
 })

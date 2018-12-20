@@ -1,0 +1,52 @@
+<div class="row p-3">
+  <h2 class="text-align-center col-md-10">Genre page!</h2>
+  <button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#genreModal" (click)="createNew()">Add
+    new</button>
+
+</div>
+<div class="row p-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Genre Name</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let genre of genres">
+      <th>{{genre.genreId}}</th>
+      <td>{{genre.genreName}}</td>
+      <td><button (click)="getGenre(genre)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                  data-target="#genreModal">Edit</button></td>
+      <td><button (click)="deleteGenre(genre.genreId)" type="button" class="btn btn-outline-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="genreModal" tabindex="-1" role="dialog" aria-labelledby="genreModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="genreModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group col-md-7">
+          <label for="name">Name:</label>
+          <input type="text" [(ngModel)]="genre.genreName" name="name" class="form-control" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveGenre()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

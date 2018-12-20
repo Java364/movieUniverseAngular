@@ -1,24 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CountrySelectorComponent } from 'src/app/custom-component/country/country-selector/country-selector.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-movie-page',
-    templateUrl: 'movie.component.html'
+  selector: 'app-movie-page',
+  templateUrl: 'movie.component.html'
 })
 
 export class MoviePageComponent implements OnInit {
+  constructor() { }
 
-    @ViewChild('countrySelector')
-    private countrySelector: CountrySelectorComponent;
-
-    constructor() {
-
-    }
-
-    ngOnInit() { }
-
-    public saveMovie() {
-        const countries: number[] = this.countrySelector.getSelectedCountries();
-        console.log(countries);
-    }
+  ngOnInit() { }
 }
