@@ -1,18 +1,22 @@
 <div class="container">
     <div class="offset-3">
-        <button class="btn btn-dark hover" (click)="getCountryById()">FindById</button>
-        <button class="btn btn-dark hover" (click)="createCountry()">Create</button>
-        <button class="btn btn-dark hover" (click)="updateCountry()">Update</button>
-        <button class="btn btn-dark hover" (click)="showAllCountries()">ShowAll</button>
-        <button class="btn btn-dark hover" (click)="deleteCountry()">Delete</button>
+        <button class="btn btn-dark hover" (click)="getMovie()">FindById</button>
+        <button class="btn btn-dark hover" (click)="createMovie()">Create</button>
+        <button class="btn btn-dark hover" (click)="updateMovie()">Update</button>
+        <button class="btn btn-dark hover" (click)="showAllMovies()">ShowAll</button>
+        <button class="btn btn-dark hover" (click)="deleteMovie()">Delete</button>
     </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="createNew()">Add new</button>
     <div class="offset-3">
-        <div *ngFor="let country of countries">
-            <label>{{country.id}}</label>
-            <label>{{country.name}}</label>
-            <button (click)="getCountry(country.id)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
-            <button (click)="deleteCountry(country.id)">Delete</button>
+        <div *ngFor="let movie of movies">
+            <label>{{movie.id}}</label>
+            <label>{{movie.name}}</label>
+          <label>{{movie.year}}</label>
+          <label>{{movie.description}}</label>
+          <label>{{movie.ageLimitation}}</label>
+          <label>{{movie.duration}}</label>
+            <button (click)="getMovie(movie.id)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+            <button (click)="deleteMovie(movie.id)">Delete</button>
         </div>
     </div>
 </div>
@@ -30,12 +34,12 @@
             <div class="modal-body">
                 <div class="form-group col-md-7">
                     <label for="name">Name:</label>
-                    <input type="text" [(ngModel)]="country.name" name="name" class="form-control" />
+                    <input type="text" [(ngModel)]="movie.name" name="name" class="form-control" />
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveCountry()" data-dismiss="modal">Save changes</button>
+                <button type="button" class="btn btn-primary" (click)="saveMovie()" data-dismiss="modal">Save changes</button>
             </div>
         </div>
     </div>

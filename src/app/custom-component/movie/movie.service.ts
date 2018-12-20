@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Country } from './country';
+import { Movie } from './movie';
 
 @Injectable()
-export class CountryService {
+export class MovieService {
     constructor(private httpClient: HttpClient) {
     }
 
     public getById(id: number, callback: Function) {
-        this.httpClient.get('http://localhost:8080/country/show/' + id).subscribe(
+        this.httpClient.get('http://localhost:8080/movie/show/' + id).subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
     public getAll(callback: Function) {
-        this.httpClient.get('http://localhost:8080/country/list').subscribe(
+        this.httpClient.get('http://localhost:8080/movie/list').subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
-    public create(country: Country, callback: Function) {
-        this.httpClient.post('http://localhost:8080/country/create', country).subscribe(
+    public create(movie: Movie, callback: Function) {
+        this.httpClient.post('http://localhost:8080/movie/create', movie).subscribe(
             (success) => {
                 callback(success);
             }
         );
     }
 
-    public update(id: number, country: Country, callback: Function) {
-        this.httpClient.put('http://localhost:8080/country/update/' + id, country).subscribe(
+    public update(id: number, movie: Movie, callback: Function) {
+        this.httpClient.put('http://localhost:8080/movie/update/' + id, movie).subscribe(
             (success) => {
                 callback(success);
             }
@@ -38,7 +38,7 @@ export class CountryService {
     }
 
     public delete(id: number, callback: Function) {
-        this.httpClient.delete('http://localhost:8080/country/delete/' + id).subscribe(
+        this.httpClient.delete('http://localhost:8080/movie/delete/' + id).subscribe(
             (success) => {
                 callback(success);
             }

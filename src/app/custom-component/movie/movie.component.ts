@@ -1,67 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from './country';
-import { CountryService } from './country.service';
+import { Movie} from './movie';
+import { MovieService } from './movie.service';
 
 @Component({
-    selector: 'app-country',
-    templateUrl: './country.component.html',
-    styleUrls: ['./country.component.scss']
+    selector: 'app-movie',
+    templateUrl: './movie.component.html',
+    styleUrls: ['./movie.component.scss']
 })
-export class CountryComponent implements OnInit {
-    public country: Country;
-    public countries: Country[] = [];
-    constructor(private countryService: CountryService) {
-        this.country = new Country();
+export class MovieComponent implements OnInit {
+    public movie: Movie;
+    public movies: Movie[] = [];
+    constructor(private movieService: MovieService) {
+        this.movie = new Movie();
     }
 
     ngOnInit(): void {
-        this.showAllCountries();
+        this.showAllMovies();
     }
 
-    getCountry = (id: number) => {
-        this.countryService.getById(id, (success) => {
-            this.country = <Country>success;
+    getMovie = (id: number) => {
+        this.movieService.getById(id, (success) => {
+            this.movie = <Movie>success;
         });
     }
 
-    showAllCountries = () => {
-        this.countryService.getAll((success) => {
-            this.countries = <Country[]>success;
+    showAllMovies = () => {
+        this.movieService.getAll((success) => {
+            this.movies = <Movie[]>success;
         });
     }
 
-    createCountry = () => {
-        this.countryService.create(this.country, (success) => {
-            this.country = <Country>success;
-            this.showAllCountries();
+    createMovie = () => {
+        this.movieService.create(this.movie, (success) => {
+            this.movie = <Movie>success;
+            this.showAllMovies();
         });
     }
 
-    updateCountry = (id: number) => {
-        this.countryService.update(id, this.country, (success) => {
-            this.country = <Country>success;
-            this.showAllCountries();
+    updateMovie = (id: number) => {
+        this.movieService.update(id, this.movie, (success) => {
+            this.movie = <Movie>success;
+            this.showAllMovies();
         });
     }
 
-    deleteCountry = (id: number) => {
-        if (!confirm('This country will be removed')) {
+    deleteMovie = (id: number) => {
+        if (!confirm('This movie will be removed')) {
             return;
         }
-        this.countryService.delete(id, (success) => {
-            this.showAllCountries();
+        this.movieService.delete(id, (success) => {
+            this.showAllMovies();
         });
     }
 
-    saveCountry = () => {
-        if (this.country.id > -1) {
-            this.updateCountry(this.country.id);
+    saveMovie = () => {
+        if (this.movie.id > -1) {
+            this.updateMovie(this.movie.id);
         } else {
-            this.createCountry();
+            this.createMovie();
         }
     }
 
     createNew = () => {
-        this.country = new Country();
+        this.movie = new Movie();
     }
 }
