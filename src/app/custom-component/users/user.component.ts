@@ -21,7 +21,14 @@ export class UserComponent implements OnInit {
     getUser = (id: number) => {
         this.userService.getById(id, (success) => {
             this.user = <User>success;
-            console.log(this.user)
+            this.user['reviewsList'] = [];
+            this.user['movieMarkList'] = [];
+            this.userService.getLinkData(this.user._links['reviews'].href, (success) =>{
+                this.user['reviewsList'] = success;
+            });
+            this.userService.getLinkData(this.user._links['movieMarks'].href, (success) =>{
+                this.user['movieMarkList'] = success;
+            });
         });
     }
 

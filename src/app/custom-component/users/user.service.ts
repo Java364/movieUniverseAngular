@@ -54,5 +54,11 @@ export class UserService {
         );
     }
 
-
+    public getLinkData(url:string, callback: Function) {
+        this.httpClient.get(url).subscribe(
+            (success) => {
+                callback(success);
+            }
+        )
+    }
 }
