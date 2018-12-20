@@ -106,23 +106,51 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
+                <div class="row p-3">
                     <div class="col-4">Email</div>
                     <div class="col-8">{{user.email}}</div>
+                </div>
+                <div class="row p-3">
                     <div class="col-4">First name</div>
                     <div class="col-8">{{user.firstName}}</div>
+                </div>
+                <div class="row p-3">
                     <div class="col-4">Last name</div>
                     <div class="col-8">{{user.lastName}}</div>
+                </div>
+                <div class="row p-3">
                     <div class="col-4">Birthday</div>
                     <div class="col-8">{{user.birthday}}</div>
+                </div>
+                <div class="row p-3">
                     <div class="col-4">Created</div>
                     <div class="col-8">{{user.entryCreationDate}}</div>
                 </div>
+                <div class="row p-3">
+                    <div class="col-4">User Rewiews</div>
+                    <div class="col-8">
+                        <ul>
+                            <li *ngFor="let review of user.reviewsList">
+                                {{review.text}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col-4">Movie Marks</div>
+                    <div class="col-8">
+                        <ul>
+                            <li *ngFor="let mark of user.movieMarkList">
+                                {{mark.mark}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger mr-auto" data-dismiss="modal">Close</button>
-            </div>
-
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger mr-auto" data-dismiss="modal">Close</button>
+        </div>
+
     </div>
 </div>
