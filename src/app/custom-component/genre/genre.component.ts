@@ -20,15 +20,14 @@ export class GenreComponent implements OnInit {
   }
 
 
-  getGenre = (id: number) => {
-    this.genreService.getById(id, (success) => {
-      this.genre = <Genre>success;
-    });
+  getGenre = (genre: Genre) => {
+    this.genre = genre;
   }
 
   showAllGenres = () => {
     this.genreService.getAll((success) => {
       this.genres = <Genre[]>(success._embedded.genres);
+      console.log(this.genres);
     });
   }
 
