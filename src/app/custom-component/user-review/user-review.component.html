@@ -1,0 +1,58 @@
+<div class="row p-3">
+  <h2 class="text-align-center col-md-10">User review page</h2>
+  <button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#userReviewModal" (click)="createNew()">Add
+    new</button>
+
+</div>
+<div class="row p-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Review</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let userReview of userReviews">
+      <th>{{userReview.userReviewId}}</th>
+      <td>{{userReview.title}}</td>
+      <td>{{userReview.text}}</td>
+      <td><button (click)="getUserReview(userReview)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                  data-target="#userReviewModal">Edit</button></td>
+      <td><button (click)="deleteUserReview(userReview.userReviewId)" type="button" class="btn btn-outline-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="userReviewModal" tabindex="-1" role="dialog" aria-labelledby="userReviewModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userReviewModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row ">
+          <label class="col-sm-4 col-form-label" for="title">Title:</label>
+          <input type="text" [(ngModel)]="userReview.title" name="title" class="form-control" />
+        </div>
+        <div class="form-group row ">
+          <label class="col-sm-4 col-form-label" for="text">Text:</label>
+          <textarea type="text" [(ngModel)]="userReview.text" name="text" class="form-control"> </textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveUserReview()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
