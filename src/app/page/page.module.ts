@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     StarPageComponent,
     ProfessionPageComponent,
     CountryPageComponent,
-   /* UserPageComponent,*/
+    UserPageComponent,
     LinksPageComponent,
     PosterPageComponent,
     GenrePageComponent,
