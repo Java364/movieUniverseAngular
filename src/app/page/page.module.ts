@@ -16,6 +16,7 @@ import { UserReviewPageComponent } from './user-review-page/user-review-page.com
 
 const appRoutes: Routes = [
 
+
   {path: 'movie', component: MoviePageComponent},
   {path: 'star', component: StarPageComponent},
   {path: 'profession', component: ProfessionPageComponent},
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
   {path: 'user-review', component: UserReviewPageComponent}
+
 ];
 
 @NgModule({
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     MovieMarkPageComponent,
     UserReviewPageComponent
   ],
+
   providers: [],
 })
 export class PageModule {

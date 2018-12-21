@@ -1,34 +1,71 @@
 <div class="container">
-  PROFESSION
-  <div>
-    <button type="button"style="margin: 5px" class="btn btn-outline-primary" (click)="professionGet()">Find</button>
-    <button type="button" style="margint: 5px" class="btn btn-outline-primary"(click)="testAll()">Show All</button>
-    <button type="button" style="margin: 5px" class="btn btn-outline-danger" (click)="professionDelete()">Delete</button>
 
-    <div>
-      <label>Profession Type:</label>
-      <input type="text" [(ngModel)]="profession.professionType"/>
-      <!--<input type="text" [(ngModel)]="profession.starIds"/>-->
-      <!--<div><span>star</span>
-        <p *ngFor="let starIds of profession">{{ profession.starIds }}</p>
-      </div>-->
-      <li *ngFor="let profession of profession.starIds">
-        {{ profession }}
-      </li> <br>
-     <!-- <ul>
-        <li *ngfor="let starIds of profession">{{ starIds.starIds }}</li>
-      </ul>-->
 
-    </div>
-    <button type="button" style="margin: 5px" class="btn btn-outline-success"(click)="professionPost()">Create</button>
-    <button type="button" style="margin: 5px" class="btn btn-outline-primary "(click)="professionPut()">Update</button>
-    <ul>
-      <li *ngFor="let list of professionList">
-        <div> Name: {{list.professionType}}</div>
-        <div> starIds: {{list.starIds}}</div>
-        <!--<div>Social Networking Site: {{list.socialNetworkingSite}}</div>
-        <div> starID: {{list.starID}}</div>-->
-      </li>
-    </ul>
+
+
+
+  <div class="row p-3">
+    <h2 class="text-align-center col-md-10">Profession page!</h2>
+    <!--<button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#userModal" (click)="createPost()">Add
+      new</button>-->
+    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#ProfessionModal">Create</button>
   </div>
-</div>
+
+  <div class="row p-3">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Type:</th>
+        <th scope="col">StarID:</th>
+
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let list of professionList">
+        <th>{{list.professionType}}</th>
+        <td>{{list.starIds}}</td>
+
+
+        <td><button (click)="professionGet(list.id)" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#ProfessionModal">Edit</button></td>
+        <td><button (click)="professionDelete(list.id)" type="button" class="btn btn-outline-danger">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+  <div class="modal fade" id="ProfessionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Profession</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label" >Profession Type:</label>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="profession.professionType" name="professionType" class="form-control" />
+              </div>
+            </div>
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="professionPost()" data-dismiss="modal">Save changes</button>
+            </div>
+          </form>
+
+        </div></div>

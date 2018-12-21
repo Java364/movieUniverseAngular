@@ -15,33 +15,43 @@ export class LinksComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showAll();
   }
 
-  linkGet() {
-  this.linksService.getLinks(6, (success) => {
+  linkGet(id: number) {
+  this.linksService.getLinks(id, (success) => {
     this.links = <Links>success;
   });
 }
-  linkDelete() {
-    this.linksService.deleteLinks(25, (success) => {
-      this.links = <Links>success;
+  linkDelete(id: number) {
+    this.linksService.deleteLinks(id, (success) => {
+      this.showAll();
     });
   }
   createPost() {
     this.linksService.createLinks(this.links, (success) => {
       this.links = <Links>success;
+      this.showAll();
     });
   }
 
-  updatePut() {
-    this.linksService.updateLinks(6, this.links, (success) => {
+  updatePut(id: number) {
+    this.linksService.updateLinks(id, this.links, (success) => {
       this.links = <Links>success;
+      this.showAll();
     });
 
   }
-  testAll() {
+  showAll() {
     this.linksService.showAll( (success) => {
       this.linksList = <Links[]>success;
     });
   }
+ /* saveCountry = () => {
+    if (this.links.id > -1) {
+      this.updatePut(this.links.id);
+    } else {
+      this.createPost();
+    }
+  }*/
 }
