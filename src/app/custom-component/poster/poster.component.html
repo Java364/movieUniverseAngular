@@ -1,18 +1,52 @@
 <div class="container">
-  <button (click)="testGet()">Test Get</button>
-  <button (click)="testPost()">Test Post</button>
-  <button (click)="testPut()">Test Put</button>
-  <button (click)="testDelete()">Test Delete</button>
-  <div>
-      <label>Name:</label>
-      <input type="text" [(ngModel)]="poster.name"/>
-  </div>
-  <div>
-      <label>URL:</label>
-      <input type="text" [(ngModel)]="poster.imageUrl"/>
-  </div>
-  <div>
-      <label>MovieID:</label>
-      <input type="text" [(ngModel)]="poster.movieId"/>
-  </div>
-</div>
+        Poster
+        <div>
+            <button type="button" style="margin: 5px" class="btn btn-outline-primary" (click)="showPoster(poster.id)">Show</button>
+            <button type="button" class="btn btn-outline-success" (click)="createPoster()">Create</button>
+            <button type="button" style="margin: 5px" class="btn btn-outline-primary" (click)="updatePosterById(poster.id)">Update</button>
+            <button type="button" style="margin: 5px" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">DeleteById</button>
+            <form>
+                <div class="form-group col-md-7">
+                    <label for="id">Poster id:</label>
+                    <input type="text" [(ngModel)]="poster.id" id="id" class="form-control" name="id" />
+                </div>
+                <div class="form-group col-md-7">
+                    <label for="name">Poster Name:</label>
+                    <input type="text" [(ngModel)]="poster.name" id="name" class="form-control" name="name" />
+                </div>
+                <div class="form-group col-md-7">
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="text" [(ngModel)]="poster.imageUrl" id="imageUrl" class="form-control" name="imageUrl" />
+                </div>
+    
+                <div class="form-group col-md-7">
+                    <label for="movieId">MovieID:</label>
+                    <input type="text" [(ngModel)]="poster.movieId" id="movieId" class="form-control" name="movieId" />
+                </div>
+            </form>
+           
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group col-md-7">
+                            <label for="id">ID:</label>
+                            <input type="text" [(ngModel)]="poster.id" name="id3" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="deletePosterById(poster.id)" data-dismiss="modal">Delete poster</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
