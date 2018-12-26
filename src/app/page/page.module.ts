@@ -8,15 +8,13 @@ import {CountryPageComponent} from './country/country.component';
 import {UserPageComponent} from './user/user.component';
 import {PageComponent} from './page.component';
 import {CustomComponentModule} from '../custom-component/customComponents.module';
-
 import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
 import {MovieMarkPageComponent} from './movieMark/movieMark.component';
 import { UserReviewPageComponent } from './user-review-page/user-review-page.component';
 
+
 const appRoutes: Routes = [
-
-
   {path: 'movie', component: MoviePageComponent},
   {path: 'star', component: StarPageComponent},
   {path: 'profession', component: ProfessionPageComponent},
@@ -26,7 +24,7 @@ const appRoutes: Routes = [
   {path: 'poster', component: PosterPageComponent},
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
-  {path: 'user-review', component: UserReviewPageComponent}
+  {path: 'user-review', component: UserReviewPageComponent},
 
 ];
 
@@ -52,7 +50,8 @@ const appRoutes: Routes = [
     PosterPageComponent,
     GenrePageComponent,
     MovieMarkPageComponent,
-    UserReviewPageComponent
+    UserReviewPageComponent,
+
   ],
 
   providers: [],
