@@ -8,7 +8,6 @@ import {CountryPageComponent} from './country/country.component';
 import {UserPageComponent} from './user/user.component';
 import {PageComponent} from './page.component';
 import {CustomComponentModule} from '../custom-component/customComponents.module';
-import {UserReviewMarkPageComponent} from './user-review-mark/user-review-mark.component'
 import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
 import {MovieMarkPageComponent} from './movieMark/movieMark.component';
@@ -16,8 +15,6 @@ import { UserReviewPageComponent } from './user-review-page/user-review-page.com
 
 
 const appRoutes: Routes = [
-
-
   {path: 'movie', component: MoviePageComponent},
   {path: 'star', component: StarPageComponent},
   {path: 'profession', component: ProfessionPageComponent},
@@ -28,7 +25,7 @@ const appRoutes: Routes = [
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
   {path: 'user-review', component: UserReviewPageComponent},
-  {path: 'user-review-mark', component: UserReviewMarkPageComponent}
+
 ];
 
 @NgModule({
@@ -54,7 +51,7 @@ const appRoutes: Routes = [
     GenrePageComponent,
     MovieMarkPageComponent,
     UserReviewPageComponent,
-    UserReviewMarkPageComponent
+
   ],
 
   providers: [],
