@@ -83,4 +83,11 @@ export class MovieComponent implements OnInit {
         this.countrySelector.setSelectedCountries([]);
         this.genreSelector.setSelectedGenres([]);
     }
+
+    addCountris = () => {
+        let countries = this.countrySelector.getSelectedCountriesDto();
+        this.movieService.addCountries(this.movie.id, countries, (success) => {
+            console.log(success)
+        })
+    }
 }
