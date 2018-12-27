@@ -13,6 +13,7 @@ import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
 import {MovieMarkPageComponent} from './movieMark/movieMark.component';
 import { UserReviewPageComponent } from './user-review-page/user-review-page.component';
+import { ForTestPageComponent } from './fortest/fortest.component';
 
 const appRoutes: Routes = [
 
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   {path: 'poster', component: PosterPageComponent},
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
-  {path: 'user-review', component: UserReviewPageComponent}
+  {path: 'user-review', component: UserReviewPageComponent},
+  {path: 'fortest', component: ForTestPageComponent}
 ];
 
 @NgModule({
@@ -50,7 +52,8 @@ const appRoutes: Routes = [
     PosterPageComponent,
     GenrePageComponent,
     MovieMarkPageComponent,
-    UserReviewPageComponent
+    UserReviewPageComponent,
+    ForTestPageComponent
   ],
   providers: [],
 })

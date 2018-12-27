@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from './country';
-import { CountryService } from './country.service';
+import { Country } from '../country';
+import { CountryService } from '../country.service';
+
 
 @Component({
-    selector: 'app-country',
-    templateUrl: './country.component.html',
-    styleUrls: ['./country.component.scss']
+    selector: 'app-country-editor',
+    templateUrl: './country-editor.component.html',
+    styleUrls: ['./country-editor.component.scss']
 })
-export class CountryComponent implements OnInit {
+export class CountryEditorComponent implements OnInit {
     public country: Country;
     public countries: Country[] = [];
     constructor(private countryService: CountryService) {
