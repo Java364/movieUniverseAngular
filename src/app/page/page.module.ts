@@ -8,15 +8,14 @@ import {CountryPageComponent} from './country/country.component';
 import {UserPageComponent} from './user/user.component';
 import {PageComponent} from './page.component';
 import {CustomComponentModule} from '../custom-component/customComponents.module';
-
 import {LinksPageComponent} from './links/links.component';
 import {PosterPageComponent} from './poster/poster.component';
 import {MovieMarkPageComponent} from './movieMark/movieMark.component';
 import { UserReviewPageComponent } from './user-review-page/user-review-page.component';
 import { ForTestPageComponent } from './fortest/fortest.component';
 
-const appRoutes: Routes = [
 
+const appRoutes: Routes = [
   {path: 'movie', component: MoviePageComponent},
   {path: 'star', component: StarPageComponent},
   {path: 'profession', component: ProfessionPageComponent},
@@ -27,7 +26,11 @@ const appRoutes: Routes = [
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
   {path: 'user-review', component: UserReviewPageComponent},
+<<<<<<< HEAD
   {path: 'fortest', component: ForTestPageComponent}
+=======
+
+>>>>>>> e6da3bcee9033434481a47a29f295f854ae4e029
 ];
 
 @NgModule({
@@ -53,8 +56,13 @@ const appRoutes: Routes = [
     GenrePageComponent,
     MovieMarkPageComponent,
     UserReviewPageComponent,
+<<<<<<< HEAD
     ForTestPageComponent
+=======
+
+>>>>>>> e6da3bcee9033434481a47a29f295f854ae4e029
   ],
+
   providers: [],
 })
 export class PageModule {

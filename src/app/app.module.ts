@@ -10,7 +10,9 @@ import { PageModule } from './page/page.module';
 
 @NgModule({
   declarations: [
+
     AppComponent
+
   ],
   imports: [
     BrowserModule,
