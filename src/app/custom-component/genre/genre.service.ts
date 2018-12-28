@@ -8,14 +8,14 @@ export class GenreService {
   }
 
   public getAll(callback: Function) {
-    this.httpClient.get('http://localhost:8080/genre/all').subscribe(
+    this.httpClient.get('http://localhost:8080/genres').subscribe(
       (success) => {
         callback(success);
       }
     );
   }
   public create(country: Genre, callback: Function) {
-    this.httpClient.post('http://localhost:8080/genre', country).subscribe(
+    this.httpClient.post('http://localhost:8080/genres', country).subscribe(
       (success) => {
         callback(success);
       }
@@ -23,7 +23,7 @@ export class GenreService {
   }
 
   public update(id: number, country: Genre, callback: Function) {
-    this.httpClient.put('http://localhost:8080/genre/' + id, country).subscribe(
+    this.httpClient.put('http://localhost:8080/genres/' + id, country).subscribe(
       (success) => {
         callback(success);
       }
@@ -31,7 +31,7 @@ export class GenreService {
   }
 
   public delete(id: number, callback: Function) {
-    this.httpClient.delete('http://localhost:8080/genre/' + id).subscribe(
+    this.httpClient.delete('http://localhost:8080/genres/' + id).subscribe(
       (success) => {
         callback(success);
       }

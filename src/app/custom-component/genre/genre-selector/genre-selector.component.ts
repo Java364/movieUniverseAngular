@@ -26,7 +26,7 @@ export class GenreSelectorComponent implements OnInit {
     ngOnInit() {
         this.genreService.getAll((success) => {
             console.log(success);
-            this.genres = <Genre[]>(success._embedded.genres);
+            this.genres = <Genre[]>(success);
         });
     }
 }

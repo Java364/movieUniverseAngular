@@ -22,6 +22,10 @@ export class CountrySelectorComponent implements OnInit {
     constructor(private countryService: CountryService) {
     }
 
+    public getSelectedCountriesDto() {
+        return this.countries.filter(country => this.selectedCountries.indexOf(country.id) > 0);
+    }
+
     ngOnInit() {
         this.countryService.getAll((success) => {
             console.log(success);

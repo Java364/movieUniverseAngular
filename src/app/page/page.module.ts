@@ -26,11 +26,7 @@ const appRoutes: Routes = [
   {path: 'moviemark', component: MovieMarkPageComponent},
   {path: 'genre', component: GenrePageComponent},
   {path: 'user-review', component: UserReviewPageComponent},
-<<<<<<< HEAD
   {path: 'fortest', component: ForTestPageComponent}
-=======
-
->>>>>>> e6da3bcee9033434481a47a29f295f854ae4e029
 ];
 
 @NgModule({
@@ -56,11 +52,7 @@ const appRoutes: Routes = [
     GenrePageComponent,
     MovieMarkPageComponent,
     UserReviewPageComponent,
-<<<<<<< HEAD
     ForTestPageComponent
-=======
-
->>>>>>> e6da3bcee9033434481a47a29f295f854ae4e029
   ],
 
   providers: [],
